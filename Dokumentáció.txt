@@ -16,7 +16,7 @@ A betegek nem férnek hozzá az orvosok és az adminisztrátorok felületéhez, 
 		-A.1.4-
 Ha egy beteg nem létező vagy helytelen adatokkal akar bejelentkezni akkor a felület hibát dob és esélyt ad az adatok újboli próbálkozásokra.
 
-	-A.2-
+	-A.2.0-
 Az adminisztrátorok és orvosok egyaránt képesek kezelni a betegek gyógyszereit legyen szó új hozzáadásáról, módosításról vagy éppen törléséről. Ezt bármikor a bejelentkezett fiókukról megtehetik. A változás után az adatbázisban a módosított adat azonnal frissül és a beteg már az új gyógyszeradatok alapján tudja ezeket megtekinteni és a jövőben lekérni a receptjéhez.
 
 		-A.2.0-
@@ -27,3 +27,7 @@ Módosításnál a módosító fél (jelen esetben az admin vagy az orvos) az ad
 
 		-A.2.2-
 Az admin vagy az orvos képes a beteg adatait és gyógyszereit törlés szinten módosítani, ez azt takarja hogy a kiválasztott gyógyszert a  beteg profiljából teljes szinten törli, ennek visszaállítására csak az említett két fél képes, amint törlésre került az adat a beteg profiljában ez azonnal módosításra kerül.
+
+	-A.3.0-
+A betegek a profiljukon látják a saját gyógyszereiket amik magukba foglalják a gyógyszer NEVÉT, FELHASZNÁLÁSI TANÁCSOT és egy FŐBB HATÓANYAGOT. Ezeket az A.2.0 pontok alapján az admin és az orvos tud kezelni. A betegek ezeket az adatokat lekérni tudják.
+
