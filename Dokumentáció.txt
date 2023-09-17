@@ -1,0 +1,29 @@
+	-A.1-
+Ez egy egészségügyi nyilvántartó rendszer ahol az adminisztrátor létre tud hozni betegeknek és orvosoknak fiókokat ahol az orvosok menedzselni tudják a betegeik adatait és a vizsgálatok alapján kezelni tudják a szükséges gyógyszereket egy online felületen.
+
+		-A.1.0-
+Az adminisztrátor létre tud hozni fiókokat az orvosoknak, akik a betegek már meglévő profiljait tudják majd kezelni
+
+		-A.1.1-
+Orvosi fiókokat nem tudnak az orvosok önállóan létrehozni, az adminisztrátor engedélye az új orvosi profil létrehozásához elengedhetetlen.
+
+		-A.1.2-
+Az orvosoknak teljes körű hozzáférése van a betegek adataihoz legyen szó kezelésekről, vizsgálatokról és a gyógyszerek felírásáról.
+
+		-A.1.3-
+A betegek nem férnek hozzá az orvosok és az adminisztrátorok felületéhez, ők csak a saját adataikhoz van hozzáférése és annak menedzselése felsőbb kezelést igényel.
+
+		-A.1.4-
+Ha egy beteg nem létező vagy helytelen adatokkal akar bejelentkezni akkor a felület hibát dob és esélyt ad az adatok újboli próbálkozásokra.
+
+	-A.2-
+Az adminisztrátorok és orvosok egyaránt képesek kezelni a betegek gyógyszereit legyen szó új hozzáadásáról, módosításról vagy éppen törléséről. Ezt bármikor a bejelentkezett fiókukról megtehetik. A változás után az adatbázisban a módosított adat azonnal frissül és a beteg már az új gyógyszeradatok alapján tudja ezeket megtekinteni és a jövőben lekérni a receptjéhez.
+
+		-A.2.0-
+Hozzáadásnál a hozzáadó fél (jelen esetben az admin vagy az orvos) egy adatbázis elérésén keresztül tudja betegekre lebontva megtekinteni a már felvitt gyógyszereket/adatokat, és egyy funkció segítségével a pontos megnevezését használva tudja a listához fűzni az újonnan felvinni kívánt adatot/gyógyszert, ezen kívül a megjegyzésben leírt hatóanyagait ill. a felhasználási feltételét.
+
+		-A.2.1-
+Módosításnál a módosító fél (jelen esetben az admin vagy az orvos) az adatbázison belül a felvitt lista adatait tudja módosítani, kiválasztva a beteg profiljában az adott gyógyszert és annak hatóanyaglistáját vagy a felhasználási feltételét. Ez a beteg profiljában azonnal módosításra kerül.
+
+		-A.2.2-
+Az admin vagy az orvos képes a beteg adatait és gyógyszereit törlés szinten módosítani, ez azt takarja hogy a kiválasztott gyógyszert a  beteg profiljából teljes szinten törli, ennek visszaállítására csak az említett két fél képes, amint törlésre került az adat a beteg profiljában ez azonnal módosításra kerül.
