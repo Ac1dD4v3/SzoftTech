@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-09-17T18:50:09.567Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0" etag="IPD6MM8U1_cCnxqAd6-s" version="21.7.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-09-17T18:57:03.150Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0" etag="IEwz-VCR9Rl2D3wtkG_S" version="21.7.5" type="github">
   <diagram name="1 oldal" id="AEnvhfXg99mwHYd9WnJD">
     <mxGraphModel dx="989" dy="514" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -13,7 +13,7 @@
           </mxCell>
         </object>
         <mxCell id="HJrxLAgvNuHEPMi2FTiN-8" value="Orvos felh. létrehozása" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="346" y="250" width="136" height="50" as="geometry" />
+          <mxGeometry x="346" y="240" width="136" height="50" as="geometry" />
         </mxCell>
         <mxCell id="HJrxLAgvNuHEPMi2FTiN-10" value="Adatbázis" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
           <mxGeometry x="720" y="240" width="40" height="70" as="geometry" />
@@ -25,6 +25,36 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="HJrxLAgvNuHEPMi2FTiN-13" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="HJrxLAgvNuHEPMi2FTiN-8" target="HJrxLAgvNuHEPMi2FTiN-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="490" as="sourcePoint" />
+            <mxPoint x="340" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HJrxLAgvNuHEPMi2FTiN-14" value="Patikus létrehozása" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="347" y="300" width="134" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HJrxLAgvNuHEPMi2FTiN-15" value="" style="endArrow=none;html=1;rounded=0;entryX=-0.03;entryY=0.486;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="HJrxLAgvNuHEPMi2FTiN-3" target="HJrxLAgvNuHEPMi2FTiN-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="490" as="sourcePoint" />
+            <mxPoint x="340" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HJrxLAgvNuHEPMi2FTiN-16" value="" style="endArrow=none;html=1;rounded=0;exitX=1.041;exitY=0.499;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="HJrxLAgvNuHEPMi2FTiN-14" target="HJrxLAgvNuHEPMi2FTiN-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="490" as="sourcePoint" />
+            <mxPoint x="340" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HJrxLAgvNuHEPMi2FTiN-17" value="Beteg létrehozása" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="347" y="360" width="133" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HJrxLAgvNuHEPMi2FTiN-18" value="" style="endArrow=none;html=1;rounded=0;entryX=0.03;entryY=0.423;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="HJrxLAgvNuHEPMi2FTiN-3" target="HJrxLAgvNuHEPMi2FTiN-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="490" as="sourcePoint" />
+            <mxPoint x="340" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HJrxLAgvNuHEPMi2FTiN-19" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HJrxLAgvNuHEPMi2FTiN-10" target="HJrxLAgvNuHEPMi2FTiN-17">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="290" y="490" as="sourcePoint" />
             <mxPoint x="340" y="440" as="targetPoint" />
