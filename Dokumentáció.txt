@@ -31,3 +31,4 @@ Az admin vagy az orvos képes a beteg adatait és gyógyszereit törlés szinten
 	-A.3.0-
 A betegek a profiljukon látják a saját gyógyszereiket amik magukba foglalják a gyógyszer NEVÉT, FELHASZNÁLÁSI TANÁCSOT és egy FŐBB HATÓANYAGOT. Ezeket az A.2.0 pontok alapján az admin és az orvos tud kezelni. A betegek ezeket az adatokat lekérni tudják.
 
+
