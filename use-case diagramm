@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-09-24T14:43:36.257Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="pzbQ8ArceQoYXU7U4orZ" version="21.8.1" type="github">
+<mxfile host="app.diagrams.net" modified="2023-09-24T14:43:59.078Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="gBPwx-ywdamXXooLwbsv" version="21.8.1" type="github">
   <diagram name="1 oldal" id="AEnvhfXg99mwHYd9WnJD">
     <mxGraphModel dx="1032" dy="790" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
       <root>
@@ -53,7 +53,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="ps2LovTlF5BYLmBZWEAe-3" value="Új beteg létrehozása" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="490" y="460" width="140" height="60" as="geometry" />
+          <mxGeometry x="530" y="460" width="140" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ps2LovTlF5BYLmBZWEAe-4" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="HJrxLAgvNuHEPMi2FTiN-24" target="ps2LovTlF5BYLmBZWEAe-3" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -74,7 +74,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="ps2LovTlF5BYLmBZWEAe-8" value="Új recept létrehozása" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="490" y="530" width="140" height="60" as="geometry" />
+          <mxGeometry x="530" y="530" width="140" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ps2LovTlF5BYLmBZWEAe-9" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="HJrxLAgvNuHEPMi2FTiN-24" target="ps2LovTlF5BYLmBZWEAe-8" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -89,7 +89,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="ps2LovTlF5BYLmBZWEAe-15" value="Recept megtekintése" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="490" y="600" width="140" height="60" as="geometry" />
+          <mxGeometry x="530" y="600" width="140" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ps2LovTlF5BYLmBZWEAe-16" value="" style="endArrow=none;html=1;rounded=0;exitX=0.6;exitY=0.829;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="HJrxLAgvNuHEPMi2FTiN-25" target="ps2LovTlF5BYLmBZWEAe-15" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -110,7 +110,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="ps2LovTlF5BYLmBZWEAe-19" value="Recept törlése" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="490" y="670" width="140" height="60" as="geometry" />
+          <mxGeometry x="530" y="670" width="140" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ps2LovTlF5BYLmBZWEAe-20" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="HJrxLAgvNuHEPMi2FTiN-24" target="ps2LovTlF5BYLmBZWEAe-19" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
