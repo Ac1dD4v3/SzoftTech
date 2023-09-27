@@ -1,9 +1,63 @@
-<mxfile host="app.diagrams.net" modified="2023-09-26T10:12:48.669Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" version="21.8.2" etag="esizLeOA7qbRuS2u_qk-" type="github">
+<mxfile host="app.diagrams.net" modified="2023-09-27T12:06:24.186Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="jBYaKzRMkwrmL-9nC6xA" version="21.8.2" type="github">
   <diagram name="1 oldal" id="A5lsXJry7dlUo_Qo3VN9">
-    <mxGraphModel>
+    <mxGraphModel dx="890" dy="988" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="PKvca1slZynbOJYqbTlJ-1" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="880" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="PKvca1slZynbOJYqbTlJ-4" value="Belépés" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="430" y="40" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PKvca1slZynbOJYqbTlJ-5" value="" style="ellipse;fillColor=strokeColor;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="105" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PKvca1slZynbOJYqbTlJ-6" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="PKvca1slZynbOJYqbTlJ-5" target="PKvca1slZynbOJYqbTlJ-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="300" y="280" as="sourcePoint" />
+            <mxPoint x="230" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PKvca1slZynbOJYqbTlJ-7" value="Rendszer megkapja a belépési kérést" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PKvca1slZynbOJYqbTlJ-8" value="Rendszer visszaad egy belépési felületet" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PKvca1slZynbOJYqbTlJ-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="PKvca1slZynbOJYqbTlJ-7" target="PKvca1slZynbOJYqbTlJ-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="130" as="sourcePoint" />
+            <mxPoint x="160" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PKvca1slZynbOJYqbTlJ-10" value="Rendszer megkapja a kitöltött belépési űrlapot" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PKvca1slZynbOJYqbTlJ-11" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="PKvca1slZynbOJYqbTlJ-8" target="PKvca1slZynbOJYqbTlJ-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="440" y="280" as="sourcePoint" />
+            <mxPoint x="490" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PKvca1slZynbOJYqbTlJ-12" value="Rendszer ellenőrzi az adatokat" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PKvca1slZynbOJYqbTlJ-13" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="PKvca1slZynbOJYqbTlJ-10" target="PKvca1slZynbOJYqbTlJ-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="820" y="280" as="sourcePoint" />
+            <mxPoint x="870" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PKvca1slZynbOJYqbTlJ-14" value="" style="ellipse;html=1;shape=endState;fillColor=strokeColor;" vertex="1" parent="1">
+          <mxGeometry x="870" y="105" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PKvca1slZynbOJYqbTlJ-15" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="PKvca1slZynbOJYqbTlJ-12" target="PKvca1slZynbOJYqbTlJ-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="820" y="280" as="sourcePoint" />
+            <mxPoint x="870" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
