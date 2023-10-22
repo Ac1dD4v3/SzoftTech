@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-22T17:31:37.650Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="yohuhLB5ox_ArzEXiV7U" version="22.0.6" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-22T17:34:18.071Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="PBmIz5VSB0W6-SYRv9Uf" version="22.0.6" type="github">
   <diagram name="1 oldal" id="AEnvhfXg99mwHYd9WnJD">
     <mxGraphModel dx="1086" dy="832" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
       <root>
@@ -158,7 +158,7 @@
         <mxCell id="wqoZC_PlC1Eii9VCLWC3-10" value="Gyógyszer hozzáadása az elérhetők listájához" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="560" y="210" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="wqoZC_PlC1Eii9VCLWC3-11" value="" style="edgeStyle=none;html=1;endArrow=none;verticalAlign=bottom;rounded=0;exitX=0.25;exitY=0.229;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.929;entryY=0.857;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="HJrxLAgvNuHEPMi2FTiN-26" target="wqoZC_PlC1Eii9VCLWC3-10" edge="1">
+        <mxCell id="wqoZC_PlC1Eii9VCLWC3-11" value="" style="edgeStyle=none;html=1;endArrow=none;verticalAlign=bottom;rounded=0;entryX=0.929;entryY=0.857;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="HJrxLAgvNuHEPMi2FTiN-26" target="wqoZC_PlC1Eii9VCLWC3-10" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="620" y="370" as="sourcePoint" />
             <mxPoint x="780" y="370" as="targetPoint" />
