@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-29T08:44:27.631Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="sc-X6Ared9OvKUCqyAyO" version="22.0.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-29T08:47:14.374Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="g1DpJ5mZDoN_p6dswEyx" version="22.0.8" type="github">
   <diagram name="1 oldal" id="AEnvhfXg99mwHYd9WnJD">
     <mxGraphModel dx="605" dy="830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
       <root>
@@ -8,7 +8,7 @@
           <mxGeometry x="350" y="120" width="780" height="720" as="geometry" />
         </mxCell>
         <mxCell id="HJrxLAgvNuHEPMi2FTiN-24" value="Orvos" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
-          <mxGeometry x="80" y="580" width="40" height="70" as="geometry" />
+          <mxGeometry x="110" y="570" width="40" height="70" as="geometry" />
         </mxCell>
         <mxCell id="HJrxLAgvNuHEPMi2FTiN-25" value="Beteg" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
           <mxGeometry x="180" y="250" width="40" height="70" as="geometry" />
