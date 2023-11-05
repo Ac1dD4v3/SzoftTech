@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-02T11:00:42.897Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="CgqGvjQNRClhlWm41OVC" version="22.0.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-05T19:22:20.877Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="ZKmu7TtCkPt3IQsSvaVG" version="22.0.8" type="github">
   <diagram name="1 oldal" id="AEnvhfXg99mwHYd9WnJD">
     <mxGraphModel dx="1032" dy="830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
       <root>
@@ -47,18 +47,9 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="ps2LovTlF5BYLmBZWEAe-8" value="Új recept létrehozása" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="410" y="455" width="140" height="60" as="geometry" />
+          <mxGeometry x="410" y="390" width="140" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ps2LovTlF5BYLmBZWEAe-9" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="HJrxLAgvNuHEPMi2FTiN-24" target="ps2LovTlF5BYLmBZWEAe-8" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="550" y="490" as="sourcePoint" />
-            <mxPoint x="600" y="440" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="ps2LovTlF5BYLmBZWEAe-15" value="Recept megtekintése" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="410" y="530" width="140" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="ps2LovTlF5BYLmBZWEAe-16" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="pvSMmdj58elwx04I8e59-7" target="ps2LovTlF5BYLmBZWEAe-15" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="550" y="490" as="sourcePoint" />
             <mxPoint x="600" y="440" as="targetPoint" />
@@ -104,9 +95,9 @@
             <mxPoint x="811" y="553" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="or5cBbIUGjjsOrLWbpsS-9" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=none;html=1;startArrow=open;endArrow=none;startSize=12;verticalAlign=bottom;dashed=1;labelBackgroundColor=none;rounded=0;entryX=0.107;entryY=0.767;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.979;exitY=0.617;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="ps2LovTlF5BYLmBZWEAe-15" target="or5cBbIUGjjsOrLWbpsS-5" edge="1">
+        <mxCell id="or5cBbIUGjjsOrLWbpsS-9" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=none;html=1;startArrow=open;endArrow=none;startSize=12;verticalAlign=bottom;dashed=1;labelBackgroundColor=none;rounded=0;entryX=0.107;entryY=0.767;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="b9qoeLKwnRH-DBXTHrpo-1" target="or5cBbIUGjjsOrLWbpsS-5" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="580" y="347" as="sourcePoint" />
+            <mxPoint x="547.06" y="567.02" as="sourcePoint" />
             <mxPoint x="821" y="563" as="targetPoint" />
           </mxGeometry>
         </mxCell>
@@ -138,7 +129,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="wqoZC_PlC1Eii9VCLWC3-18" value="Recept igénylése" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="510" y="380" width="140" height="70" as="geometry" />
+          <mxGeometry x="510" y="315" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="wqoZC_PlC1Eii9VCLWC3-19" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="HJrxLAgvNuHEPMi2FTiN-25" target="wqoZC_PlC1Eii9VCLWC3-18" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -196,6 +187,30 @@
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="340" y="580" as="sourcePoint" />
             <mxPoint x="390" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b9qoeLKwnRH-DBXTHrpo-1" value="Recept megtekintése orvosi felhasználóval" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="415" y="520" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="b9qoeLKwnRH-DBXTHrpo-2" value="Recept megtekintése beteg felhasználóval" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="415" y="455" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="b9qoeLKwnRH-DBXTHrpo-3" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=none;html=1;startArrow=open;endArrow=none;startSize=12;verticalAlign=bottom;dashed=1;labelBackgroundColor=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="b9qoeLKwnRH-DBXTHrpo-2">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="555" y="500" as="sourcePoint" />
+            <mxPoint x="750" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b9qoeLKwnRH-DBXTHrpo-4" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HJrxLAgvNuHEPMi2FTiN-24" target="b9qoeLKwnRH-DBXTHrpo-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="510" y="550" as="sourcePoint" />
+            <mxPoint x="560" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b9qoeLKwnRH-DBXTHrpo-5" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HJrxLAgvNuHEPMi2FTiN-25" target="b9qoeLKwnRH-DBXTHrpo-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="510" y="550" as="sourcePoint" />
+            <mxPoint x="560" y="500" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
