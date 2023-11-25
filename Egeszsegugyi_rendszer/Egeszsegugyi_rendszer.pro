@@ -7,6 +7,7 @@ SOURCES += \
     beteg.cpp \
     datum.cpp \
         felhasznalo.cpp \
+    felirtrecept.cpp \
     gyogyszer.cpp \
     gyogyszertar.cpp \
     hiba.cpp \
@@ -15,11 +16,14 @@ SOURCES += \
     recept.cpp \
     szerepkor.cpp \
     szerepkortipus.cpp
+    orvosinput.txt
+    beteginput.txt
 
 HEADERS += \
     beteg.h \
     datum.h \
     felhasznalo.h \
+    felirtrecept.h \
     gyogyszer.h \
     gyogyszertar.h \
     hiba.h \

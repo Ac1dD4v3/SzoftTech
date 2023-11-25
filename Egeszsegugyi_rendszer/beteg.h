@@ -11,9 +11,10 @@ class Beteg : public Felhasznalo
 {
 private:
     string TAJ_szam;
-    map<const Datum ,const Recept> receptek;
+//    map<Datum,Recept> receptek;
 public:
-    Beteg();
+    Beteg(const string &nev_, const string &tel_, const string &email_, const string& TAJ_szam_);
+    string getTajSzam()const;
     void receptIgenylese();
     void segitseg();
 };

@@ -9,8 +9,11 @@ class Felhasznalo
     string felh_nev, felh_tel, felh_email;
 
 public:
-    Felhasznalo();
+    Felhasznalo(const string& felh_nev_, const string& felh_tel_, const string& felh_email_);
     int getSzID()const;
+    string getFelhNev()const;
+    string getFelhTel()const;
+    string getFelhEmail()const;
     void receptMegtekintes()const;
 };
 

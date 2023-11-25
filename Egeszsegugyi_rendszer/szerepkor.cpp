@@ -1,6 +1,5 @@
 #include "szerepkor.h"
 
-Szerepkor::Szerepkor()
-{
-
-}
+Szerepkor::Szerepkor(const string &Szerep_):
+    Szerep(Szerep_)
+{}

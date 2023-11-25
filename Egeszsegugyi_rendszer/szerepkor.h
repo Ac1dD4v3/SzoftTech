@@ -9,7 +9,7 @@ private:
     int SzID;
     string Szerep;
 public:
-    Szerepkor();
+    Szerepkor(const string& Szerep_);
 };
 
 #endif // SZEREPKOR_H

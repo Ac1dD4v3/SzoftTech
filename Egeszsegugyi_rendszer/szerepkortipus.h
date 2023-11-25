@@ -6,7 +6,7 @@
 class Szerepkortipus
 {
 private:
-
+    string Orvos,Beteg,Gyogyszertar;
 public:
     Szerepkortipus();
 };
