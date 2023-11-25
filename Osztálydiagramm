@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-25T14:02:20.911Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0" etag="h2AXiri2vzH14XLwVsKB" version="22.1.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-25T14:02:44.298Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0" etag="0odUPiyF2qJgwXsMCYn9" version="22.1.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="792" dy="745" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
       <root>
@@ -99,7 +99,7 @@
             <mxRectangle x="230" y="140" width="160" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="YoZKJyj2oiflAj_kyPIk-22" value="Dátum" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rounded=0;shadow=0;html=0;" parent="YoZKJyj2oiflAj_kyPIk-21" vertex="1">
+        <mxCell id="YoZKJyj2oiflAj_kyPIk-22" value="Lejárati dátum" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rounded=0;shadow=0;html=0;" parent="YoZKJyj2oiflAj_kyPIk-21" vertex="1">
           <mxGeometry y="26" width="160" height="26" as="geometry" />
         </mxCell>
         <mxCell id="YoZKJyj2oiflAj_kyPIk-23" value="Beteg neve" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rounded=0;shadow=0;html=0;" parent="YoZKJyj2oiflAj_kyPIk-21" vertex="1">
