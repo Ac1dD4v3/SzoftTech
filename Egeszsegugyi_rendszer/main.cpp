@@ -15,25 +15,53 @@
 #include "szerepkortipus.h"
 
 using namespace std;
+void orvosibelepes(){
+    ifstream orvosinput;
+    orvosinput.open("orvosinput.txt");
+    if(!orvosinput.is_open()){
+        //hiba osztaly
+        cout<<"nem sikerult megnyitni"<<endl;
+    }
+    else{
+        string inputnev;
+        cout<<"Felhasznalonev: ";
+        cin>>inputnev;
+        string nev, jelszo;
+        while(nev!=inputnev){
+            getline(orvosinput,nev);
+            getline(orvosinput,jelszo);
+        }
+    }
 
-string belepes(){
+}
+void betegbelepes(){
+
+}
+void gyogyszertarbelepes(){
+
+}
+
+void szerepkorvalasztas(){
     int szerepkornumber;
     cout<<"Valaszd ki a szerepkorod, es ird be a szamat: "<<endl;
     cout<<"Orvos: 1"<<endl<<"Beteg: 2"<<endl<<"Gyogyszertar: 3"<<endl;
     cin>>szerepkornumber;
     if(szerepkornumber>3 || szerepkornumber<1){
         cout<<"Nem megfelelo szerepkor"<<endl;
-        belepes();
+        szerepkorvalasztas();
     }
     else if(szerepkornumber==1){
-        return "Orvos";
+        orvosibelepes();
     }
     else if(szerepkornumber==2){
-        return "Beteg";
+        betegbelepes();
     }
     else if(szerepkornumber==3)
-        return "Gyogyszertar";
+        gyogyszertarbelepes();
 }
+
+
+
 //bekéri a felhasználótól, hogy milyen szerepkörben van és csak akkor engedi be, ha a felhasználó és a jelszó is megegyezik
 int main()
 {
@@ -95,13 +123,8 @@ int main()
         gy1.setOTH_kod(OTH_kod);
     }
 
-    string szerepkor=belepes();
-    cout<<szerepkor<<endl;
-    string inputszoveg="exit";
-    while(exit!=exit){
-        cout<<"Most mi lesz?: "<<endl;
-        cin>>inputszoveg;
-    }
+    szerepkorvalasztas();
+
     return 0;
 }
 
