@@ -13,7 +13,7 @@ private:
     string TAJ_szam;
 //    map<Datum,Recept> receptek;
 public:
-    Beteg(const string &nev_, const string &tel_, const string &email_, const string& TAJ_szam_);
+    Beteg(const string &nev_,const string &jelsz_, const string &email_, const string& TAJ_szam_);
     string getTajSzam()const;
     void receptIgenylese();
     void segitseg();

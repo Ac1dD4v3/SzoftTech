@@ -15,56 +15,7 @@
 #include "szerepkortipus.h"
 
 using namespace std;
-void beolvasas(){
-    ifstream orvosinput;
-    orvosinput.open("orvosinput.txt");
-    if(!orvosinput.is_open()){
-        //hiba osztaly
-        cout<<"nem sikerult megnyitni"<<endl;
-    }
-    else{
-        string nev, telefon, email, OTH_kod;
-        getline(orvosinput,nev);
-        getline(orvosinput,telefon);
-        getline(orvosinput,email);
-        getline(orvosinput,OTH_kod);
-        //orvosinput>>nev>>telefon>>email>>OTH_kod;
-        cout<<nev<<" "<<telefon<<" "<<email<<" "<<OTH_kod<<endl;
-    }
 
-    ifstream beteginput;
-    beteginput.open("beteginput.txt");
-    if(!beteginput.is_open()){
-        //hiba osztaly
-        cout<<"nem sikerult megnyitni"<<endl;
-    }
-    else{
-        string nev, telefon, email, TAJ_szam;
-        getline(beteginput,nev);
-        getline(beteginput,telefon);
-        getline(beteginput,email);
-        getline(beteginput,TAJ_szam);
-        //orvosinput>>nev>>telefon>>email>>OTH_kod;
-        cout<<nev<<" "<<telefon<<" "<<email<<" "<<TAJ_szam<<endl;
-    }
-
-    ifstream gyogyszertarinput;
-    gyogyszertarinput.open("gyogyszertarinput.txt");
-    if(!gyogyszertarinput.is_open()){
-        //hiba osztaly
-        cout<<"nem sikerult megnyitni"<<endl;
-    }
-    else{
-        string nev, telefon, email, OTH_kod;
-        getline(gyogyszertarinput,nev);
-        getline(gyogyszertarinput,telefon);
-        getline(gyogyszertarinput,email);
-        getline(gyogyszertarinput,OTH_kod);
-        //orvosinput>>nev>>telefon>>email>>OTH_kod;
-        cout<<nev<<" "<<telefon<<" "<<email<<" "<<OTH_kod<<endl;
-    }
-
-}
 
 string belepes(){
     int szerepkornumber;
@@ -81,13 +32,62 @@ string belepes(){
     else if(szerepkornumber==2){
         return "Beteg";
     }
-    else
+    else if(szerepkornumber==3)
         return "Gyogyszertar";
-}//bekéri a felhasználótól, hogy milyen szerepkörben van és csak akkor engedi be, ha a felhasználó és a jelszó is megegyezik
-
+}
+//bekéri a felhasználótól, hogy milyen szerepkörben van és csak akkor engedi be, ha a felhasználó és a jelszó is megegyezik
 int main()
 {
-    beolvasas();
+    Orvos o1("","","","");
+    Beteg b1("","","","");
+    ifstream orvosinput;
+    orvosinput.open("orvosinput.txt");
+    if(!orvosinput.is_open()){
+        //hiba osztaly
+        cout<<"nem sikerult megnyitni"<<endl;
+    }
+    else{
+        string nev, email, OTH_kod, jelszo;
+        getline(orvosinput, nev);
+        getline(orvosinput, email);
+        getline(orvosinput, OTH_kod);
+        getline(orvosinput, jelszo);
+        o1.setFelhNev(nev);
+        o1.setFelhEmail(email);
+        o1.setFelhJelszo(jelszo);
+        o1.setOTH_kod(OTH_kod);
+        //beolvas és az o1-nek beállítja az értékeit
+    }
+
+    ifstream beteginput;
+    beteginput.open("beteginput.txt");
+    if(!beteginput.is_open()){
+        //hiba osztaly
+        cout<<"nem sikerult megnyitni"<<endl;
+    }
+    else{
+        string nev, telefon, email, TAJ_szam;
+        getline(beteginput,nev);
+        getline(beteginput,telefon);
+        getline(beteginput,email);
+        getline(beteginput,TAJ_szam);
+        cout<<nev<<" "<<telefon<<" "<<email<<" "<<TAJ_szam<<endl;
+    }
+
+    ifstream gyogyszertarinput;
+    gyogyszertarinput.open("gyogyszertarinput.txt");
+    if(!gyogyszertarinput.is_open()){
+        //hiba osztaly
+        cout<<"nem sikerult megnyitni"<<endl;
+    }
+    else{
+        string nev, telefon, email, OTH_kod;
+        getline(gyogyszertarinput,nev);
+        getline(gyogyszertarinput,telefon);
+        getline(gyogyszertarinput,email);
+        getline(gyogyszertarinput,OTH_kod);
+        cout<<nev<<" "<<telefon<<" "<<email<<" "<<OTH_kod<<endl;
+    }
     string szerepkor=belepes();
     cout<<szerepkor<<endl;
     return 0;

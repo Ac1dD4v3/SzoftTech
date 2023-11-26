@@ -1,10 +1,10 @@
 #include "felhasznalo.h"
 
 Felhasznalo::Felhasznalo(const string &felh_nev_,
-                         const string &felh_tel_,
+                         const string &felh_jelsz_,
                          const string &felh_email_):
     felh_nev(felh_nev_),
-    felh_tel(felh_tel_),
+    felh_jelsz(felh_jelsz_),
     felh_email(felh_email_)
 {}
 
@@ -18,12 +18,27 @@ string Felhasznalo::getFelhNev() const
     return this->felh_nev;
 }
 
-string Felhasznalo::getFelhTel() const
+void Felhasznalo::setFelhNev(string ujnev)
 {
-    return this->getFelhTel();
+    felh_nev=ujnev;
+}
+
+string Felhasznalo::getFelhJelszo() const
+{
+    return felh_jelsz;
+}
+
+void Felhasznalo::setFelhJelszo(string ujjelszo)
+{
+    felh_jelsz=ujjelszo;
 }
 
 string Felhasznalo::getFelhEmail() const
 {
-    return this->getFelhEmail();
+    return felh_email;
+}
+
+void Felhasznalo::setFelhEmail(string ujmail)
+{
+    felh_email=ujmail;
 }

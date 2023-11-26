@@ -11,7 +11,7 @@ private:
     string OTH_kod;
     list<Gyogyszer> Elerhetok;
 public:
-    Gyogyszertar(const string &nev_, const string &tel_, const string &email_, const string& OTH_kod_);
+    Gyogyszertar(const string &nev_, const string &jelsz_, const string &email_, const string& OTH_kod_);
     void receptTorlese();
     void elerhetoGyogyszerekListazasa()const;
     void elerhetoGyogyszerekTorlese();

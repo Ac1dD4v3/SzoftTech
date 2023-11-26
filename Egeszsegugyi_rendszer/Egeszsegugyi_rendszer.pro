@@ -31,3 +31,5 @@ HEADERS += \
     recept.h \
     szerepkor.h \
     szerepkortipus.h
+
+DISTFILES +=
