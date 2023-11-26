@@ -12,11 +12,11 @@ public:
     Felhasznalo(const string& felh_nev_, const string& felh_jelsz_, const string& felh_email_);
     int getSzID()const;
     string getFelhNev()const;
-    void setFelhNev(string ujnev);
+    void setFelhNev(const string& ujnev);
     string getFelhJelszo()const;
-    void setFelhJelszo(string ujjelszo);
+    void setFelhJelszo(const string& ujjelszo);
     string getFelhEmail()const;
-    void setFelhEmail(string ujmail);
+    void setFelhEmail(const string& ujmail);
     void receptMegtekintes()const;
 //    friend ostream& operator<<(ostream& os,const Felhasznalo& felh){
 //        os<<felh;

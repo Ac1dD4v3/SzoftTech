@@ -15,6 +15,7 @@ private:
 public:
     Beteg(const string &nev_,const string &jelsz_, const string &email_, const string& TAJ_szam_);
     string getTajSzam()const;
+    void setTajSzam(const string& ujtaj);
     void receptIgenylese();
     void segitseg();
 };

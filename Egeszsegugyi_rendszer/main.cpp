@@ -40,6 +40,7 @@ int main()
 {
     Orvos o1("","","","");
     Beteg b1("","","","");
+    Gyogyszertar gy1("","","","");
     ifstream orvosinput;
     orvosinput.open("orvosinput.txt");
     if(!orvosinput.is_open()){
@@ -66,12 +67,15 @@ int main()
         cout<<"nem sikerult megnyitni"<<endl;
     }
     else{
-        string nev, telefon, email, TAJ_szam;
+        string nev, email, TAJ_szam, jelszo;
         getline(beteginput,nev);
-        getline(beteginput,telefon);
         getline(beteginput,email);
         getline(beteginput,TAJ_szam);
-        cout<<nev<<" "<<telefon<<" "<<email<<" "<<TAJ_szam<<endl;
+        getline(orvosinput, jelszo);
+        b1.setFelhNev(nev);
+        b1.setFelhEmail(email);
+        b1.setTajSzam(TAJ_szam);
+        b1.setFelhJelszo(jelszo);
     }
 
     ifstream gyogyszertarinput;
@@ -81,12 +85,15 @@ int main()
         cout<<"nem sikerult megnyitni"<<endl;
     }
     else{
-        string nev, telefon, email, OTH_kod;
+        string nev, email, OTH_kod, jelszo;
         getline(gyogyszertarinput,nev);
-        getline(gyogyszertarinput,telefon);
         getline(gyogyszertarinput,email);
         getline(gyogyszertarinput,OTH_kod);
-        cout<<nev<<" "<<telefon<<" "<<email<<" "<<OTH_kod<<endl;
+        getline(orvosinput, jelszo);
+        gy1.setFelhNev(nev);
+        gy1.setFelhEmail(email);
+        gy1.setFelhJelszo(jelszo);
+        gy1.setOTH_kod(OTH_kod);
     }
     string szerepkor=belepes();
     cout<<szerepkor<<endl;

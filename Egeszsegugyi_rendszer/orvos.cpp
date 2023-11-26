@@ -5,7 +5,7 @@ string Orvos::getOTH_kod() const
     return OTH_kod;
 }
 
-void Orvos::setOTH_kod(string ujoth)
+void Orvos::setOTH_kod(const string &ujoth)
 {
     OTH_kod=ujoth;
 }

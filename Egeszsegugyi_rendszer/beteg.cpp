@@ -12,3 +12,8 @@ string Beteg::getTajSzam() const
 {
     return TAJ_szam;
 }
+
+void Beteg::setTajSzam(const string &ujtaj)
+{
+    TAJ_szam=ujtaj;
+}

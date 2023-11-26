@@ -18,7 +18,7 @@ string Felhasznalo::getFelhNev() const
     return this->felh_nev;
 }
 
-void Felhasznalo::setFelhNev(string ujnev)
+void Felhasznalo::setFelhNev(const string &ujnev)
 {
     felh_nev=ujnev;
 }
@@ -28,7 +28,7 @@ string Felhasznalo::getFelhJelszo() const
     return felh_jelsz;
 }
 
-void Felhasznalo::setFelhJelszo(string ujjelszo)
+void Felhasznalo::setFelhJelszo(const string &ujjelszo)
 {
     felh_jelsz=ujjelszo;
 }
@@ -38,7 +38,7 @@ string Felhasznalo::getFelhEmail() const
     return felh_email;
 }
 
-void Felhasznalo::setFelhEmail(string ujmail)
+void Felhasznalo::setFelhEmail(const string& ujmail)
 {
     felh_email=ujmail;
 }
