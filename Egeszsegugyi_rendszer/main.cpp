@@ -16,7 +16,6 @@
 
 using namespace std;
 
-
 string belepes(){
     int szerepkornumber;
     cout<<"Valaszd ki a szerepkorod, es ird be a szamat: "<<endl;
@@ -95,8 +94,14 @@ int main()
         gy1.setFelhJelszo(jelszo);
         gy1.setOTH_kod(OTH_kod);
     }
+
     string szerepkor=belepes();
     cout<<szerepkor<<endl;
+    string inputszoveg="exit";
+    while(exit!=exit){
+        cout<<"Most mi lesz?: "<<endl;
+        cin>>inputszoveg;
+    }
     return 0;
 }
 
