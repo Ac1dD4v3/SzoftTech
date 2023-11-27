@@ -164,23 +164,7 @@ int main()
 //        //beolvas és az o1-nek beállítja az értékeit
 //    }
 
-//    ifstream beteginput;
-//    beteginput.open("beteginput.txt");
-//    if(!beteginput.is_open()){
-//        //hiba osztaly
-//        cout<<"nem sikerult megnyitni"<<endl;
-//    }
-//    else{
-//        string nev, email, TAJ_szam, jelszo;
-//        getline(beteginput,nev);
-//        getline(beteginput,email);
-//        getline(beteginput,TAJ_szam);
-//        getline(orvosinput, jelszo);
-//        b1.setFelhNev(nev);
-//        b1.setFelhEmail(email);
-//        b1.setTajSzam(TAJ_szam);
-//        b1.setFelhJelszo(jelszo);
-//    }
+
 
 //    ifstream gyogyszertarinput;
 //    gyogyszertarinput.open("gyogyszertarinput.txt");
@@ -200,6 +184,15 @@ int main()
 //        gy1.setOTH_kod(OTH_kod);
 //    }
 }
+    ifstream beteginput;
+    beteginput.open("orvosinput.txt");
+    if(!beteginput.is_open()){
+        //hiba osztaly
+        cout<<"nem sikerult megnyitni"<<endl;
+    }
+    else{
+       cout<<"jeno"<<endl;
+    }
     szerepkorvalasztas();
 
     return 0;
