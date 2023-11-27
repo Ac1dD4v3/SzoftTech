@@ -3,11 +3,10 @@
 
 #include <map>
 #include "felhasznalo.h"
-#include "orvos.h"
 #include "datum.h"
 #include "recept.h"
 #include <vector>
-using namespace std;
+
 class Beteg : public Felhasznalo
 {
 private:

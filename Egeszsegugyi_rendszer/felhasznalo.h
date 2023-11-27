@@ -20,11 +20,6 @@ public:
     void setFelhJelszo(const string& ujjelszo);
     string getFelhEmail()const;
     void setFelhEmail(const string& ujmail);
-    void receptMegtekintes()const;
-//    friend ostream& operator<<(ostream& os,const Felhasznalo& felh){
-//        os<<felh;
-//        return os;
-//    }
 };
 
 #endif // FELHASZNALO_H

@@ -10,7 +10,7 @@ void Orvos::setOTH_kod(const string &ujoth)
     OTH_kod=ujoth;
 }
 
-void Orvos::betegFelvetele()
+vector<string> Orvos::betegFelvetele()
 {
     vector<string> ujlista;
     ifstream beteginput;
@@ -26,23 +26,30 @@ void Orvos::betegFelvetele()
             string cell;
 
             while (getline(ss, cell, ';')) { // Vesszővel elválasztott cellák feldolgozása
-                Betegek.push_back(cell);
+                ujlista.push_back(cell);
             }
         }
-
         beteginput.close(); // Fájl bezárása
-        for(auto row:Betegek){
-            cout<<row<<endl;
+        int szam=1;
+        cout<<endl;
+        for(size_t i=0;i<ujlista.size();i++){
+            cout<<szam<<": "<<ujlista[i]<<endl;
+            szam++;
         }
+        cout<<"Valassza ki a beteget, akit szeretne a praxisaba felvenni es irja be a szamat!"<<endl;
+        string valasztottbeteg;
+        cin>>valasztottbeteg;
+        Betegek.push_back(valasztottbeteg);
+        cout<<"Beteg hozzaadva!"<<endl;
+        return Betegek;
     }
-    cout<<"Beteg hozzaadva!"<<endl;
 }
 
 vector<string> Orvos::betegTorlese()
 {
     vector<string> ujlista;
     int szam=1;
-    for(int i=0;i<Betegek.size();i++){
+    for(size_t i=0;i<Betegek.size();i++){
         cout<<szam<<": "<<Betegek[i]<<";"<<endl;
         szam++;
     }
