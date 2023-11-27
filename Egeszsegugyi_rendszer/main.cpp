@@ -93,27 +93,27 @@ void gyogyszertarkezdolap(){
 }
 
 void orvosibelepes(){
-//    ifstream orvosinput;
-//    orvosinput.open("orvosinput.txt");
-//    if(!orvosinput.is_open()){
-//        //hiba osztaly
-//        cout<<"nem sikerult megnyitni"<<endl;
-//    }
-//    else{
-//        string inputnev;
-//        cout<<"Felhasznalonev: ";
-//        cin>>inputnev;
-//        string nev,jelszo;
-//        int offset;
-//        while(orvosinput.eof()){
-//            if(offset=(nev.find(inputnev,0))!=string::npos){
-//                getline(orvosinput,nev);
-//                getline(orvosinput,jelszo);
-//            }
-//        }
-//        cout<<nev<<jelszo<<endl;
-//        orvosinput.close();
-//    }
+    ifstream orvosinput;
+    orvosinput.open("orvosinput.txt");
+    if(!orvosinput.is_open()){
+        //hiba osztaly
+        cout<<"nem sikerult megnyitni"<<endl;
+    }
+    else{
+        string inputnev;
+        cout<<"Felhasznalonev: ";
+        cin>>inputnev;
+        string nev,jelszo;
+        int offset;
+        while(orvosinput.eof()){
+            if(offset=(nev.find(inputnev,0))!=string::npos){
+                getline(orvosinput,nev);
+                getline(orvosinput,jelszo);
+            }
+        }
+        cout<<nev<<jelszo<<endl;
+        orvosinput.close();
+    }
 }
 void betegbelepes(){}
 void gyogyszertarbelepes(){}
