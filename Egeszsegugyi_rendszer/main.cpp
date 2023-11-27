@@ -139,7 +139,8 @@ void szerepkorvalasztas(){
         //gyogyszertarbelepes();
 
 
-        betegkezdolap();
+        betegkezdolap();a
+
     }
     else if(szerepkornumber==3){
         gyogyszertarkezdolap();
