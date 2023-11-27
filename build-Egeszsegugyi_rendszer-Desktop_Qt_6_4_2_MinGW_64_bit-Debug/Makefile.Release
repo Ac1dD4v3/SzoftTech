@@ -146,9 +146,9 @@ compiler_clean:
 
 release/beteg.o: ../Egeszsegugyi_rendszer/beteg.cpp ../Egeszsegugyi_rendszer/beteg.h \
 		../Egeszsegugyi_rendszer/felhasznalo.h \
+		../Egeszsegugyi_rendszer/orvos.h \
 		../Egeszsegugyi_rendszer/datum.h \
 		../Egeszsegugyi_rendszer/recept.h \
-		../Egeszsegugyi_rendszer/orvos.h \
 		../Egeszsegugyi_rendszer/gyogyszer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\beteg.o ..\Egeszsegugyi_rendszer\beteg.cpp
 
@@ -177,9 +177,9 @@ release/hiba.o: ../Egeszsegugyi_rendszer/hiba.cpp ../Egeszsegugyi_rendszer/hiba.
 
 release/main.o: ../Egeszsegugyi_rendszer/main.cpp ../Egeszsegugyi_rendszer/beteg.h \
 		../Egeszsegugyi_rendszer/felhasznalo.h \
+		../Egeszsegugyi_rendszer/orvos.h \
 		../Egeszsegugyi_rendszer/datum.h \
 		../Egeszsegugyi_rendszer/recept.h \
-		../Egeszsegugyi_rendszer/orvos.h \
 		../Egeszsegugyi_rendszer/gyogyszer.h \
 		../Egeszsegugyi_rendszer/felirtrecept.h \
 		../Egeszsegugyi_rendszer/gyogyszertar.h \
@@ -189,7 +189,11 @@ release/main.o: ../Egeszsegugyi_rendszer/main.cpp ../Egeszsegugyi_rendszer/beteg
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\Egeszsegugyi_rendszer\main.cpp
 
 release/orvos.o: ../Egeszsegugyi_rendszer/orvos.cpp ../Egeszsegugyi_rendszer/orvos.h \
-		../Egeszsegugyi_rendszer/felhasznalo.h
+		../Egeszsegugyi_rendszer/felhasznalo.h \
+		../Egeszsegugyi_rendszer/beteg.h \
+		../Egeszsegugyi_rendszer/datum.h \
+		../Egeszsegugyi_rendszer/recept.h \
+		../Egeszsegugyi_rendszer/gyogyszer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\orvos.o ..\Egeszsegugyi_rendszer\orvos.cpp
 
 release/recept.o: ../Egeszsegugyi_rendszer/recept.cpp ../Egeszsegugyi_rendszer/recept.h \
