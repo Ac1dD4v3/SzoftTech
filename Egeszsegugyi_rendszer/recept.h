@@ -5,6 +5,7 @@
 #include "beteg.h"
 #include "orvos.h"
 #include "gyogyszer.h"
+#include "felhasznalo.h"
 
 class Recept
 {
