@@ -15,6 +15,81 @@
 #include "szerepkortipus.h"
 
 using namespace std;
+
+void orvosikezdolap(){
+    int valasztas;
+    cout<<endl;
+    cout << "Valassz a lehetosegek kozul: "<<endl
+        <<"1: Beteg felvetele;"<<endl
+        <<"2: Beteg torlese;"<<endl
+        <<"3: Recept letrehozasa;"<<endl
+        <<"4: Recept torlese;"<<endl;
+    cin>>valasztas;
+    if(valasztas>4 || valasztas<1){
+        cout<<"Nincs ilyen lehetoseg"<<endl;
+        orvosikezdolap();
+    }
+    else if(valasztas==1){
+        cout<<"Beteg felveve!"<<endl;//ide jönnek az osztalyok fuggvenyei
+    }
+    else if(valasztas==2){
+        cout<<"Beteg torolve!"<<endl;
+    }
+    else if(valasztas==3){
+        cout<<"Recept felveve!"<<endl;
+    }
+    else{
+        cout<<"Recept torolve!"<<endl;
+    }
+}
+
+void betegkezdolap(){
+    int valasztas;
+    cout<<endl;
+    cout << "Valassz a lehetosegek kozul: "<<endl
+        <<"1: Recept igenylese;"<<endl
+        <<"2: Segitseg;"<<endl;
+    cin>>valasztas;
+    if(valasztas>2 || valasztas<1){
+        cout<<"Nincs ilyen lehetoseg"<<endl;
+        betegkezdolap();
+    }
+    else if(valasztas==1){
+        cout<<"Recept igenyelve!"<<endl;
+    }
+    else{
+        cout<<"Recept igenylesehez irja be az 1-es szamot!"<<endl;
+        betegkezdolap();
+    }
+}
+
+void gyogyszertarkezdolap(){
+    int valasztas;
+    cout<<endl;
+    cout << "Valassz a lehetosegek kozul: "<<endl
+        <<"1: Recept torlese;"<<endl
+        <<"2: Elerheto gyogyszerek;"<<endl
+        <<"3: Elerheto gyogyszer torlese;"<<endl
+        <<"4: Elerheto gyogyszer hozzaadasa;"<<endl;
+    cin>>valasztas;
+    if(valasztas>4 || valasztas<1){
+        cout<<"Nincs ilyen lehetoseg"<<endl;
+        orvosikezdolap();
+    }
+    else if(valasztas==1){
+        cout<<"Recept torlese!"<<endl;//ide jönnek az osztalyok fuggvenyei
+    }
+    else if(valasztas==2){
+        cout<<"Elerheto gyogyszerek: a b c!"<<endl;
+    }
+    else if(valasztas==3){
+        cout<<"Elerheto gyogyszer torolve!"<<endl;
+    }
+    else{
+        cout<<"Elerheto gyogyszer hozzaadva!"<<endl;
+    }
+}
+
 void orvosibelepes(){
 //    ifstream orvosinput;
 //    orvosinput.open("orvosinput.txt");
@@ -55,10 +130,10 @@ void szerepkorvalasztas(){
         orvosikezdolap();
     }
     else if(szerepkornumber==2){
-        betegbelepes();
+        betegkezdolap();
     }
     else if(szerepkornumber==3)
-        gyogyszertarbelepes();
+        gyogyszertarkezdolap();
 }
 
 int main()
