@@ -16,30 +16,30 @@
 
 using namespace std;
 void orvosibelepes(){
-    ifstream orvosinput;
-    orvosinput.open("orvosinput.txt");
-    if(!orvosinput.is_open()){
-        //hiba osztaly
-        cout<<"nem sikerult megnyitni"<<endl;
-    }
-    else{
-        string inputnev;
-        cout<<"Felhasznalonev: ";
-        cin>>inputnev;
-        string nev, jelszo;
-        while(nev!=inputnev){
-            getline(orvosinput,nev);
-            getline(orvosinput,jelszo);
-        }
-    }
-
+//    ifstream orvosinput;
+//    orvosinput.open("orvosinput.txt");
+//    if(!orvosinput.is_open()){
+//        //hiba osztaly
+//        cout<<"nem sikerult megnyitni"<<endl;
+//    }
+//    else{
+//        string inputnev;
+//        cout<<"Felhasznalonev: ";
+//        cin>>inputnev;
+//        string nev,jelszo;
+//        int offset;
+//        while(orvosinput.eof()){
+//            if(offset=(nev.find(inputnev,0))!=string::npos){
+//                getline(orvosinput,nev);
+//                getline(orvosinput,jelszo);
+//            }
+//        }
+//        cout<<nev<<jelszo<<endl;
+//        orvosinput.close();
+//    }
 }
-void betegbelepes(){
-
-}
-void gyogyszertarbelepes(){
-
-}
+void betegbelepes(){}
+void gyogyszertarbelepes(){}
 
 void szerepkorvalasztas(){
     int szerepkornumber;
@@ -51,7 +51,8 @@ void szerepkorvalasztas(){
         szerepkorvalasztas();
     }
     else if(szerepkornumber==1){
-        orvosibelepes();
+        //orvosibelepes();
+        orvosikezdolap();
     }
     else if(szerepkornumber==2){
         betegbelepes();
@@ -60,68 +61,65 @@ void szerepkorvalasztas(){
         gyogyszertarbelepes();
 }
 
-
-
-//bekéri a felhasználótól, hogy milyen szerepkörben van és csak akkor engedi be, ha a felhasználó és a jelszó is megegyezik
 int main()
 {
-    Orvos o1("","","","");
-    Beteg b1("","","","");
-    Gyogyszertar gy1("","","","");
-    ifstream orvosinput;
-    orvosinput.open("orvosinput.txt");
-    if(!orvosinput.is_open()){
-        //hiba osztaly
-        cout<<"nem sikerult megnyitni"<<endl;
-    }
-    else{
-        string nev, email, OTH_kod, jelszo;
-        getline(orvosinput, nev);
-        getline(orvosinput, email);
-        getline(orvosinput, OTH_kod);
-        getline(orvosinput, jelszo);
-        o1.setFelhNev(nev);
-        o1.setFelhEmail(email);
-        o1.setFelhJelszo(jelszo);
-        o1.setOTH_kod(OTH_kod);
-        //beolvas és az o1-nek beállítja az értékeit
-    }
+//    Orvos o1("","","","");
+//    Beteg b1("","","","");
+//    Gyogyszertar gy1("","","","");
+//    ifstream orvosinput;
+//    orvosinput.open("orvosinput.txt");
+//    if(!orvosinput.is_open()){
+//        //hiba osztaly
+//        cout<<"nem sikerult megnyitni"<<endl;
+//    }
+//    else{
+//        string nev, email, OTH_kod, jelszo;
+//        getline(orvosinput, nev);
+//        getline(orvosinput, email);
+//        getline(orvosinput, OTH_kod);
+//        getline(orvosinput, jelszo);
+//        o1.setFelhNev(nev);
+//        o1.setFelhEmail(email);
+//        o1.setFelhJelszo(jelszo);
+//        o1.setOTH_kod(OTH_kod);
+//        //beolvas és az o1-nek beállítja az értékeit
+//    }
 
-    ifstream beteginput;
-    beteginput.open("beteginput.txt");
-    if(!beteginput.is_open()){
-        //hiba osztaly
-        cout<<"nem sikerult megnyitni"<<endl;
-    }
-    else{
-        string nev, email, TAJ_szam, jelszo;
-        getline(beteginput,nev);
-        getline(beteginput,email);
-        getline(beteginput,TAJ_szam);
-        getline(orvosinput, jelszo);
-        b1.setFelhNev(nev);
-        b1.setFelhEmail(email);
-        b1.setTajSzam(TAJ_szam);
-        b1.setFelhJelszo(jelszo);
-    }
+//    ifstream beteginput;
+//    beteginput.open("beteginput.txt");
+//    if(!beteginput.is_open()){
+//        //hiba osztaly
+//        cout<<"nem sikerult megnyitni"<<endl;
+//    }
+//    else{
+//        string nev, email, TAJ_szam, jelszo;
+//        getline(beteginput,nev);
+//        getline(beteginput,email);
+//        getline(beteginput,TAJ_szam);
+//        getline(orvosinput, jelszo);
+//        b1.setFelhNev(nev);
+//        b1.setFelhEmail(email);
+//        b1.setTajSzam(TAJ_szam);
+//        b1.setFelhJelszo(jelszo);
+//    }
 
-    ifstream gyogyszertarinput;
-    gyogyszertarinput.open("gyogyszertarinput.txt");
-    if(!gyogyszertarinput.is_open()){
-        //hiba osztaly
-        cout<<"nem sikerult megnyitni"<<endl;
-    }
-    else{
-        string nev, email, OTH_kod, jelszo;
-        getline(gyogyszertarinput,nev);
-        getline(gyogyszertarinput,email);
-        getline(gyogyszertarinput,OTH_kod);
-        getline(orvosinput, jelszo);
-        gy1.setFelhNev(nev);
-        gy1.setFelhEmail(email);
-        gy1.setFelhJelszo(jelszo);
-        gy1.setOTH_kod(OTH_kod);
-    }
+//    ifstream gyogyszertarinput;
+//    gyogyszertarinput.open("gyogyszertarinput.txt");
+//    if(!gyogyszertarinput.is_open()){
+//        //hiba osztaly
+//        cout<<"nem sikerult megnyitni"<<endl;
+//    }
+//    else{
+//        string nev, email, OTH_kod, jelszo;
+//        getline(gyogyszertarinput,nev);
+//        getline(gyogyszertarinput,email);
+//        getline(gyogyszertarinput,OTH_kod);
+//        getline(orvosinput, jelszo);
+//        gy1.setFelhNev(nev);
+//        gy1.setFelhEmail(email);
+//        gy1.setFelhJelszo(jelszo);
+//        gy1.setOTH_kod(OTH_kod);
+//    }
 
     szerepkorvalasztas();
 

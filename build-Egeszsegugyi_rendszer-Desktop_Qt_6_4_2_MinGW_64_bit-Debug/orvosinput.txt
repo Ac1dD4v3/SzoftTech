@@ -1,6 +1,4 @@
 Kovacs Bela
 jelszo
-Almos Ferenc
-123
-Kis Elemer
-321
+Almos Ferenc 123
+Kis Elemer 321
