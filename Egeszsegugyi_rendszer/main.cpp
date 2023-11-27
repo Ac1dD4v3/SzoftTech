@@ -213,7 +213,7 @@ int main()
     }
 }
     szerepkorvalasztas();
-
+a
     return 0;
 }
 
