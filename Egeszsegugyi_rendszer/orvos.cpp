@@ -12,6 +12,7 @@ void Orvos::setOTH_kod(const string &ujoth)
 
 vector<string> Orvos::betegFelvetele()
 {
+
     vector<string> ujlista;
     ifstream beteginput;
     beteginput.open("beteginput.txt");
@@ -20,10 +21,27 @@ vector<string> Orvos::betegFelvetele()
         cout<<"nem sikerult megnyitni"<<endl;
    }
     else{
-        string line;
-        while (getline(beteginput, line)) { // Sorok beolvasása a fájlból
-            stringstream ss(line);
+//        string line, part;
+//        while (!beteginput.eof()) {
+//            getline(beteginput, line);
+//            if (line != "") {
+//                stringstream ss(line);
+//                string parts[5];
+//                int idx = 0;
+//                while (getline(ss, part, ';')) {
+//                    parts[idx++] = part;
+//                }
+//                int szid = stoi(parts[0]);
+//                string nev = parts[1];
+//                string jelszo = parts[2];
+//                string email = parts[3];
+//                int TAJ_szam = stoi(parts[4]);
+//                Betegek.push_back(Beteg(nev, jelszo, email, TAJ_szam));
+        string id;
+        while (getline(beteginput, id,';')) {// Sorok beolvasása a fájlból
+            stringstream ss(id);
             string cell;
+
 
             while (getline(ss, cell, ';')) { // Vesszővel elválasztott cellák feldolgozása
                 ujlista.push_back(cell);
@@ -45,8 +63,7 @@ vector<string> Orvos::betegFelvetele()
     }
 }
 
-vector<string> Orvos::betegTorlese()
-{
+vector<string> Orvos::betegTorlese(){
     vector<string> ujlista;
     int szam=1;
     for(size_t i=0;i<Betegek.size();i++){

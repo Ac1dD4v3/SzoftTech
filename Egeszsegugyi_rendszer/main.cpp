@@ -132,17 +132,14 @@ void szerepkorvalasztas(){
         orvosikezdolap();
     }
     else if(szerepkornumber==2){
-<<<<<<< Updated upstream
         betegkezdolap();
     }
     else if(szerepkornumber==3){
-=======
         //betegbelepes();
         betegkezdolap();
     }
     else if(szerepkornumber==3){
         //gyogyszertarbelepes();
->>>>>>> Stashed changes
         gyogyszertarkezdolap();
     }
 }
