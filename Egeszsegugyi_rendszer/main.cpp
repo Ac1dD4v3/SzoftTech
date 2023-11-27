@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-
 #include "beteg.h"
 #include "datum.h"
 #include "felhasznalo.h"
@@ -17,6 +16,7 @@
 using namespace std;
 
 void orvosikezdolap(){
+    Orvos o1("","","","");
     int valasztas;
     cout<<endl;
     cout << "Valassz a lehetosegek kozul: "<<endl
@@ -30,13 +30,15 @@ void orvosikezdolap(){
         orvosikezdolap();
     }
     else if(valasztas==1){
-        cout<<"Beteg felveve!"<<endl;//ide jönnek az osztalyok fuggvenyei
+        o1.betegFelvetele();
+        orvosikezdolap();//ide jönnek az osztalyok fuggvenyei
     }
     else if(valasztas==2){
-        cout<<"Beteg torolve!"<<endl;
+        o1.betegTorlese();
+        orvosikezdolap();
     }
     else if(valasztas==3){
-        cout<<"Recept felveve!"<<endl;
+        //o1.receptLetrehozasa();
     }
     else{
         cout<<"Recept torolve!"<<endl;
@@ -138,6 +140,8 @@ void szerepkorvalasztas(){
 
 int main()
 {
+//itt vannak a beolvasos kommentek
+{
 //    Orvos o1("","","","");
 //    Beteg b1("","","","");
 //    Gyogyszertar gy1("","","","");
@@ -195,7 +199,7 @@ int main()
 //        gy1.setFelhJelszo(jelszo);
 //        gy1.setOTH_kod(OTH_kod);
 //    }
-
+}
     szerepkorvalasztas();
 
     return 0;

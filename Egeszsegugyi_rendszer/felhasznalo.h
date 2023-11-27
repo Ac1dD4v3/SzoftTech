@@ -1,7 +1,10 @@
 #ifndef FELHASZNALO_H
 #define FELHASZNALO_H
 #include <iostream>
-# include <string>
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <list>
 using namespace std;
 class Felhasznalo
 {

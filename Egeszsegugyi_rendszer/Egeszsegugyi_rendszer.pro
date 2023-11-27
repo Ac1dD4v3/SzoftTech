@@ -6,12 +6,12 @@ CONFIG -= qt
 SOURCES += \
     beteg.cpp \
     datum.cpp \
-        felhasznalo.cpp \
+    felhasznalo.cpp \
     felirtrecept.cpp \
     gyogyszer.cpp \
     gyogyszertar.cpp \
     hiba.cpp \
-        main.cpp \
+    main.cpp \
     orvos.cpp \
     recept.cpp \
     szerepkor.cpp \
