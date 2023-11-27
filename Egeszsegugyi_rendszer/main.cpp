@@ -208,8 +208,6 @@ int main()
         gy1.setFelhEmail(email);
         gy1.setFelhJelszo(jelszo);
         gy1.setOTH_kod(OTH_kod);
-
-       cout<<"jeno"<<endl;
     }
 }
     szerepkorvalasztas();
