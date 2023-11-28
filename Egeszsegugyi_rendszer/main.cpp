@@ -132,9 +132,6 @@ void szerepkorvalasztas(){
         orvosikezdolap();
     }
     else if(szerepkornumber==2){
-        betegkezdolap();
-    }
-    else if(szerepkornumber==3){
         //betegbelepes();
         betegkezdolap();
     }

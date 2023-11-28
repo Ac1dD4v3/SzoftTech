@@ -1,6 +1,5 @@
-Bela 012 sumeg
-012;Beteg Jancsi
-013;Balna Bela
-014;Jonas Peter
-015;Jakob Jeno
-016;Vidam Beno
+Beteg Jancsi 012
+;Balna Bela 013
+;Jonas Peter 014
+;Jakob Jeno 015
+;Vidam Beno 016
