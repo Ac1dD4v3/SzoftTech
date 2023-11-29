@@ -12,7 +12,7 @@ class Felhasznalo
     string felh_nev, felh_jelsz, felh_email;
 
 public:
-    Felhasznalo(const string& felh_nev_, const string& felh_jelsz_, const string& felh_email_);
+    Felhasznalo(int SzID,const string& felh_nev_, const string& felh_jelsz_, const string& felh_email_);
     int getSzID()const;
     string getFelhNev()const;
     void setFelhNev(const string& ujnev);

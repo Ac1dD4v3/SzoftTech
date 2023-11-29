@@ -1,8 +1,9 @@
 #include "felhasznalo.h"
 
-Felhasznalo::Felhasznalo(const string &felh_nev_,
+Felhasznalo::Felhasznalo(int SzID, const string &felh_nev_,
                          const string &felh_jelsz_,
                          const string &felh_email_):
+    SzID(SzID),
     felh_nev(felh_nev_),
     felh_jelsz(felh_jelsz_),
     felh_email(felh_email_)

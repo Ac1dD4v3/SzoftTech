@@ -2,23 +2,22 @@
 #include <string>
 #include <fstream>
 #include "beteg.h"
-#include "datum.h"
+//#include "datum.h"
 #include "felhasznalo.h"
-#include "felirtrecept.h"
-#include "gyogyszer.h"
+//#include "gyogyszer.h"
 #include "gyogyszertar.h"
-#include "hiba.h"
+//#include "hiba.h"
 #include "orvos.h"
-#include "recept.h"
+//#include "recept.h"
 #include "szerepkor.h"
 #include "szerepkortipus.h"
+#include "stdlib.h"
 
 using namespace std;
 
 void orvosikezdolap(){
-    Orvos o1("","","","");
+    Orvos o1(0,"","","","");
     int valasztas;
-    cout<<endl;
     cout << "Valassz a lehetosegek kozul: "<<endl
         <<"1: Beteg felvetele;"<<endl
         <<"2: Beteg torlese;"<<endl
@@ -31,7 +30,8 @@ void orvosikezdolap(){
     }
     else if(valasztas==1){
         o1.betegFelvetele();
-        orvosikezdolap();//ide jönnek az osztalyok fuggvenyei
+        cout<<"Beteg Hozzaadva!"<<endl;
+        //ide jönnek az osztalyok fuggvenyei
     }
     else if(valasztas==2){
         o1.betegTorlese();
@@ -46,8 +46,8 @@ void orvosikezdolap(){
 }
 
 void betegkezdolap(){
+    system("CLS");
     int valasztas;
-    cout<<endl;
     cout << "Valassz a lehetosegek kozul: "<<endl
         <<"1: Recept igenylese;"<<endl
         <<"2: Segitseg;"<<endl;

@@ -5,15 +5,13 @@ CONFIG -= qt
 
 SOURCES += \
     beteg.cpp \
-    datum.cpp \
         felhasznalo.cpp \
-    felirtrecept.cpp \
-    gyogyszer.cpp \
+#    gyogyszer.cpp \
     gyogyszertar.cpp \
-    hiba.cpp \
+#    hiba.cpp \
         main.cpp \
     orvos.cpp \
-    recept.cpp \
+#    recept.cpp \
     szerepkor.cpp \
     szerepkortipus.cpp
     orvosinput.txt
@@ -21,14 +19,12 @@ SOURCES += \
 
 HEADERS += \
     beteg.h \
-    datum.h \
     felhasznalo.h \
-    felirtrecept.h \
-    gyogyszer.h \
+#    gyogyszer.h \
     gyogyszertar.h \
-    hiba.h \
+#    hiba.h \
     orvos.h \
-    recept.h \
+#    recept.h \
     szerepkor.h \
     szerepkortipus.h
 

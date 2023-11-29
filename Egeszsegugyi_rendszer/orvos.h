@@ -4,18 +4,20 @@
 #include "beteg.h"
 #include <list>
 #include <vector>
+#include <algorithm>
+
 
 class Orvos : public Felhasznalo
 {
 private:
     string OTH_kod;
-    vector<string> Betegek;
+    vector<Beteg> Betegek;
 public:
 
-    Orvos(const string &nev_, const string &jelsz_, const string &email_, const string& OTH_kod_);
+    Orvos(int SzID,const string &nev_, const string &jelsz_, const string &email_, const string& OTH_kod_);
     string getOTH_kod() const;
     void setOTH_kod(const string& ujoth);
-    vector<string> betegFelvetele();
+    vector<Beteg> betegFelvetele();
     vector<string> betegTorlese();
     void receptLetrehozasa();
     void receptTorlese();

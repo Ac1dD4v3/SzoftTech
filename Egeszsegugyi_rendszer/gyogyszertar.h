@@ -3,15 +3,15 @@
 
 #include <list>
 #include "felhasznalo.h"
-#include "gyogyszer.h"
+//#include "gyogyszer.h"
 
 class Gyogyszertar : public Felhasznalo
 {
 private:
     string OTH_kod;
-    list<Gyogyszer> Elerhetok;
+    list<string> Elerhetok;
 public:
-    Gyogyszertar(const string &nev_, const string &jelsz_, const string &email_, const string& OTH_kod_);
+    Gyogyszertar(int SzID,const string &nev_, const string &jelsz_, const string &email_, const string& OTH_kod_);
     string getOTH_kod() const;
     void setOTH_kod(const string &newOTH_kod);
     void receptTorlese();

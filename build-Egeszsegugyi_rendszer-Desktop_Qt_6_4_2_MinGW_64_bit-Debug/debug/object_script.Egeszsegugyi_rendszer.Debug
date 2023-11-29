@@ -1,7 +1,5 @@
 debug/beteg.o
-debug/datum.o
 debug/felhasznalo.o
-debug/felirtrecept.o
 debug/gyogyszer.o
 debug/gyogyszertar.o
 debug/hiba.o

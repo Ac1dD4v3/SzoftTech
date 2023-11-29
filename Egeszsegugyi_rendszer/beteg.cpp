@@ -1,10 +1,11 @@
 #include "beteg.h"
 
-Beteg::Beteg(const string& nev_,
+Beteg::Beteg(int SzID,
+             const string& nev_,
              const string &jelsz_,
              const string& email_,
              int TAJ_szam_):
-    Felhasznalo(nev_,jelsz_,email_),
+    Felhasznalo(SzID,nev_,jelsz_,email_),
     TAJ_szam(TAJ_szam_)
 {}
 
