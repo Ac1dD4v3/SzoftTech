@@ -56,21 +56,35 @@ vector<Beteg> Orvos::betegFelvetele()
             }
         }
         cout<<endl;
-        cout<<"Beteg lista frissitve!"<<endl;
     }
-
     return Betegek;
 }
 
-vector<string> Orvos::betegTorlese(){
+vector<Beteg> Orvos::betegTorlese(){
     vector<string> ujlista;
-//    int szam=1;
-//    for(size_t i=0;i<Betegek.size();i++){
-//        cout<<szam<<": "<<Betegek[i]<<";"<<endl;
-//        szam++;
-//    }
-//    cout<<"Beteg torolve"<<endl;
-    return ujlista;
+    Beteg o(1,"Bela","","",1);
+    Betegek.push_back(o);
+    for(size_t i=0;i<Betegek.size();i++){
+        cout<<"-- "<<Betegek[i].getFelhNev()<<";"<<endl;
+    }
+    string valasztott;
+    cin>>valasztott;
+    for (auto itr = Betegek.begin(); itr != Betegek.end();)
+       {
+          if (itr->getFelhNev() == valasztott)
+          {
+             itr = Betegek.erase(itr);
+          }
+          else
+          {
+             itr++;
+          }
+       }
+    for(size_t i=0;i<Betegek.size();i++){
+        cout<<i<<": "<<Betegek[i].getFelhNev()<<";"<<endl;
+    }
+    cout<<"Beteg torolve"<<endl;
+    return Betegek;
 }
 
 Orvos::Orvos(int SzID,

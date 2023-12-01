@@ -18,7 +18,7 @@ public:
     string getOTH_kod() const;
     void setOTH_kod(const string& ujoth);
     vector<Beteg> betegFelvetele();
-    vector<string> betegTorlese();
+    vector<Beteg> betegTorlese();
     void receptLetrehozasa();
     void receptTorlese();
 };
