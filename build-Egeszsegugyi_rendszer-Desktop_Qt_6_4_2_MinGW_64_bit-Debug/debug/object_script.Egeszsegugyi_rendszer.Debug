@@ -1,10 +1,10 @@
 debug/beteg.o
 debug/felhasznalo.o
-debug/gyogyszer.o
 debug/gyogyszertar.o
-debug/hiba.o
 debug/main.o
 debug/orvos.o
-debug/recept.o
 debug/szerepkor.o
 debug/szerepkortipus.o
+debug/orvosinput.o
+debug/beteginput.o
+debug/HealthcareSystem.o

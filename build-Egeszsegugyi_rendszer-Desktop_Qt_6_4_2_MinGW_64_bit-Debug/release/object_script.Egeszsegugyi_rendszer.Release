@@ -1,10 +1,10 @@
 release/beteg.o
 release/felhasznalo.o
-release/gyogyszer.o
 release/gyogyszertar.o
-release/hiba.o
 release/main.o
 release/orvos.o
-release/recept.o
 release/szerepkor.o
 release/szerepkortipus.o
+release/orvosinput.o
+release/beteginput.o
+release/HealthcareSystem.o

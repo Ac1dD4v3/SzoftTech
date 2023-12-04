@@ -5,7 +5,7 @@ CONFIG -= qt
 
 SOURCES += \
     beteg.cpp \
-        felhasznalo.cpp \
+    felhasznalo.cpp \
 #    gyogyszer.cpp \
     gyogyszertar.cpp \
 #    hiba.cpp \
@@ -13,11 +13,13 @@ SOURCES += \
     orvos.cpp \
 #    recept.cpp \
     szerepkor.cpp \
-    szerepkortipus.cpp
-    orvosinput.txt
-    beteginput.txt
+#    orvosinput.txt \
+#    beteginput.txt \
+    HealthcareSystem.cpp
+
 
 HEADERS += \
+    HealthcareSystem.h \
     beteg.h \
     felhasznalo.h \
 #    gyogyszer.h \

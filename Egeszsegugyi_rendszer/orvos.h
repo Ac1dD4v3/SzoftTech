@@ -5,22 +5,29 @@
 #include <list>
 #include <vector>
 #include <algorithm>
+#include <memory>
 
+namespace valami {
 
-class Orvos : public Felhasznalo
-{
-private:
-    string OTH_kod;
-    vector<Beteg> Betegek;
-public:
+    class Orvos : public Felhasznalo
+    {
+    private:
+        string OTH_kod;
+        vector<Beteg> Betegek;
+    public:
+        
 
-    Orvos(int SzID,const string &nev_, const string &jelsz_, const string &email_, const string& OTH_kod_);
-    string getOTH_kod() const;
-    void setOTH_kod(const string& ujoth);
-    vector<Beteg> betegFelvetele();
-    vector<Beteg> betegTorlese();
-    void receptLetrehozasa();
-    void receptTorlese();
-};
+        Orvos(int SzID,const string &nev_, const string &jelsz_, const string &email_, const string& OTH_kod_);
+        string getOTH_kod() const;
+        void setOTH_kod(const string& ujoth);
+        vector<Beteg> betegFelvetele();
+        vector<Beteg> betegTorlese();
+        void receptLetrehozasa();
+        void receptTorlese();
+        virtual ~Orvos() {}
+    };
+
+    typedef std::shared_ptr<Orvos> OrvosPtr;
+}
 
 #endif // ORVOS_H

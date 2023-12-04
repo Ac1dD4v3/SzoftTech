@@ -20,6 +20,8 @@ public:
     void setFelhJelszo(const string& ujjelszo);
     string getFelhEmail()const;
     void setFelhEmail(const string& ujmail);
+
+    virtual ~Felhasznalo() {}
 };
 
 #endif // FELHASZNALO_H

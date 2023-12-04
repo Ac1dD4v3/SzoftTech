@@ -12,11 +12,13 @@
 #include "szerepkor.h"
 #include "szerepkortipus.h"
 #include "stdlib.h"
+#include <memory>
+#include "HealthcareSystem.h"
 
 using namespace std;
+using namespace valami;
 
 void orvosikezdolap(){
-    Orvos o1(0,"","","","");
     int valasztas;
     cout << "Valassz a lehetosegek kozul: "<<endl
         <<"1: Beteg felvetele;"<<endl
@@ -30,14 +32,14 @@ void orvosikezdolap(){
         orvosikezdolap();
     }
     else if(valasztas==1){
-        o1.betegFelvetele();
+        HealthcareSystem::getOrvos("Semmelweis")->betegFelvetele();
         system("CLS");
         cout<<"Beteg lista frissitve! Betg hozzaadva"<<endl;
         orvosikezdolap();
         //ide jönnek az osztalyok fuggvenyei
     }
     else if(valasztas==2){
-        o1.betegTorlese();
+        HealthcareSystem::getOrvos("Semmelweis")->betegTorlese();
         system("CLS");
         cout<<"Beteg torolve"<<endl;
         orvosikezdolap();
@@ -54,7 +56,7 @@ void orvosikezdolap(){
 }
 
 void betegkezdolap(){
-    system("CLS");
+    // system("CLS");
     int valasztas;
     cout << "Valassz a lehetosegek kozul: "<<endl
         <<"1: Recept igenylese;"<<endl
@@ -120,18 +122,19 @@ void szerepkorvalasztas(){
     }
     else if(szerepkornumber==2){
         //betegbelepes();
-        system("CLS");
+        // system("CLS");
         betegkezdolap();
     }
     else if(szerepkornumber==3){
         //gyogyszertarbelepes();
-        system("CLS");
+        // system("CLS");
         gyogyszertarkezdolap();
     }
 }
 
 int main()
 {
+    auto sys = std::make_shared<HealthcareSystem>();
     szerepkorvalasztas();
 
     return 0;
