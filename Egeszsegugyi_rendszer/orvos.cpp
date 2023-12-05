@@ -64,7 +64,7 @@ namespace valami {
         size_t meret=Betegek.size();
         int szam=0;
         for(size_t i=0;i<Betegek.size();i++){
-            cout<<szam<<Betegek[i].getFelhNev()<<";"<<endl;
+            cout<<szam<<" "<<Betegek[i].getFelhNev()<<";"<<endl;
             szam++;
         }
         int valasztott;

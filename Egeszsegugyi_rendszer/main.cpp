@@ -60,18 +60,22 @@ void betegkezdolap(){
     int valasztas;
     cout << "Valassz a lehetosegek kozul: "<<endl
         <<"1: Recept igenylese;"<<endl
-        <<"2: Segitseg;"<<endl;
+        <<"2: Segitseg;"<<endl
+        <<"3: Kilepes;"<<endl;
     cin>>valasztas;
-    if(valasztas>2 || valasztas<1){
+    if(valasztas>3 || valasztas<1){
         cout<<"Nincs ilyen lehetoseg"<<endl;
         betegkezdolap();
     }
     else if(valasztas==1){
         cout<<"Recept igenyelve!"<<endl;
     }
-    else{
+    else if(valasztas==2){
         cout<<"Recept igenylesehez irja be az 1-es szamot!"<<endl;
         betegkezdolap();
+    }
+    else{
+        cout << "Viszlat!" << endl;
     }
 }
 
@@ -82,9 +86,10 @@ void gyogyszertarkezdolap(){
         <<"1: Recept torlese;"<<endl
         <<"2: Elerheto gyogyszerek;"<<endl
         <<"3: Elerheto gyogyszer torlese;"<<endl
-        <<"4: Elerheto gyogyszer hozzaadasa;"<<endl;
+        <<"4: Elerheto gyogyszer hozzaadasa;"<<endl
+        <<"5: Kilepes;"<<endl;
     cin>>valasztas;
-    if(valasztas>4 || valasztas<1){
+    if(valasztas>5 || valasztas<1){
         cout<<"Nincs ilyen lehetoseg"<<endl;
         orvosikezdolap();
     }
@@ -97,8 +102,11 @@ void gyogyszertarkezdolap(){
     else if(valasztas==3){
         cout<<"Elerheto gyogyszer torolve!"<<endl;
     }
-    else{
+    else if(valasztas==4){
         cout<<"Elerheto gyogyszer hozzaadva!"<<endl;
+    }
+    else{
+        cout << "Viszlat!" << endl;
     }
 }
 
