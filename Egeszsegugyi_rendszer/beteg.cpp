@@ -1,4 +1,16 @@
 #include "beteg.h"
+using namespace valami;
+
+
+vector<Recept> Beteg::getReceptek() const
+{
+    return receptek;
+}
+
+void Beteg::setReceptek(const vector<Recept> &newReceptek)
+{
+    receptek = newReceptek;
+}
 
 Beteg::Beteg(int SzID,
              const string& nev_,

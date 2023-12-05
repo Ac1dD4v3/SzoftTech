@@ -6,12 +6,11 @@ CONFIG -= qt
 SOURCES += \
     beteg.cpp \
     felhasznalo.cpp \
-#    gyogyszer.cpp \
     gyogyszertar.cpp \
 #    hiba.cpp \
         main.cpp \
     orvos.cpp \
-#    recept.cpp \
+    recept.cpp \
     szerepkor.cpp \
 #    orvosinput.txt \
 #    beteginput.txt \
@@ -26,7 +25,7 @@ HEADERS += \
     gyogyszertar.h \
 #    hiba.h \
     orvos.h \
-#    recept.h \
+    recept.h \
     szerepkor.h \
     szerepkortipus.h
 

@@ -39,13 +39,16 @@ void orvosikezdolap(){
         //ide jönnek az osztalyok fuggvenyei
     }
     else if(valasztas==2){
-        HealthcareSystem::getOrvos("Semmelweis")->betegTorlese();
-        system("CLS");
-        cout<<"Beteg torolve"<<endl;
-        orvosikezdolap();
+        HealthcareSystem::getOrvos("Semmelweis")->getBetegek();
+        string nev;
+        cout<<"Kerlek ird be a beteg nevet: ";
+        cin>>nev;
+        HealthcareSystem::getOrvos("Semmelweis")->betegTorlese(nev);
+        //system("CLS");
+
     }
     else if(valasztas==3){
-        //o1.receptLetrehozasa();
+        HealthcareSystem::getOrvos("Semmelweis")->receptLetrehozasa();
     }
     else if(valasztas==4){
         cout<<"Recept torolve!"<<endl;

@@ -11,12 +11,12 @@ Felhasznalo::Felhasznalo(int SzID, const string &felh_nev_,
 
 int Felhasznalo::getSzID() const
 {
-    return this->SzID;
+    return SzID;
 }
 
 string Felhasznalo::getFelhNev() const
 {
-    return this->felh_nev;
+    return felh_nev;
 }
 
 void Felhasznalo::setFelhNev(const string &ujnev)

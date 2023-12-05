@@ -60,25 +60,66 @@ namespace valami {
         return Betegek;
     }
 
-    vector<Beteg> Orvos::betegTorlese(){
-        size_t meret=Betegek.size();
-        int szam=0;
-        for(size_t i=0;i<Betegek.size();i++){
-            cout<<szam<<Betegek[i].getFelhNev()<<";"<<endl;
-            szam++;
+    void Orvos::betegTorlese(const string &betegNev){
+        vector<Beteg> newBetegek;
+        auto it=find_if(Betegek.begin(),Betegek.end(),[&betegNev](const Beteg& beteg){return beteg.getFelhNev()==betegNev;});
+        if(it==Betegek.end()){
+            cout<<"nincs ilyen nevu beteg"<<endl;
         }
-        int valasztott;
-        cin>>valasztott;
-        for(int i=0;i<Betegek.size();i++){
-            if(valasztott==i);
+        else{
+            std::copy_if (Betegek.begin(), Betegek.end(), std::back_inserter(newBetegek), [betegNev](const Beteg& beteg){
+                //cout << "c: " << beteg.getFelhNev() << endl;
+                return beteg.getFelhNev() != betegNev;
+            });
+            Betegek = newBetegek;
+            for(auto beteg : Betegek){
+                cout<<beteg.getFelhNev()<<endl;
+            }
         }
-        for(size_t i=0;i<Betegek.size();i++){
-            cout<<i<<": "<<Betegek[i].getFelhNev()<<";"<<endl;
+    }
+
+    void Orvos::receptLetrehozasa()
+    {
+        vector<Recept> ujreceptek;
+        cout<<"Kerem toltse ki a sblont"<<endl;
+        int lejarati_datum;
+        string betegneve,orvosneve,gyogyszerneve;
+        cout<<"Lejarati datum: ";
+        cin>>lejarati_datum;
+        cout<<"Valassza ki a beteg nevet es irja be: "<<endl;
+        for(auto beteg : Betegek){
+            cout<<beteg.getFelhNev()<<endl;
         }
-        if(Betegek.size()<meret){
-            cout<<"Beteg torolve"<<endl;
+        cin>>betegneve;
+        orvosneve=getFelhNev();
+        cout<<"Gyogyszer neve: ";
+        cin>>gyogyszerneve;
+        Recept a(lejarati_datum,betegneve,orvosneve,gyogyszerneve);
+        ujreceptek.push_back(a);
+        //ide jon majd a shared pointer a betegre vonatkozoan setReceptek(ujreceptek);
+        feladott_receptek.insert(make_pair(betegneve,a));
+    }
+
+    void Orvos::receptTorlese()
+    {
+        for(auto recept : feladott_receptek){
+            cout<<recept.second.getLejarati_datum()<<" "<<recept.second.getBetegneve()<<" "<<recept.second.getOrvosneve()<<" "<<recept.second.getGyogyszerneve()<<endl;
         }
-        return Betegek;
+        cout<<"Valaszd ki a receptet!"<<endl;
+    }
+
+    void Orvos::getBetegek() const
+    {
+        for(auto beteg : Betegek){
+            cout<<beteg.getFelhNev()<<endl;
+        }
+    }
+
+    void Orvos::getFeladott_receptek() const
+    {
+        for(auto receptek : feladott_receptek){
+            cout<<receptek.first<<receptek.second<<endl;
+        }
     }
 
     Orvos::Orvos(int SzID,
