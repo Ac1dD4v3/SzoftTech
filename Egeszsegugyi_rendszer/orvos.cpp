@@ -65,6 +65,12 @@ namespace valami {
         auto it=find_if(Betegek.begin(),Betegek.end(),[&betegNev](const Beteg& beteg){return beteg.getFelhNev()==betegNev;});
         if(it==Betegek.end()){
             cout<<"nincs ilyen nevu beteg"<<endl;
+    vector<Beteg> Orvos::betegTorlese(){
+        size_t meret=Betegek.size();
+        int szam=0;
+        for(size_t i=0;i<Betegek.size();i++){
+            cout<<szam<<" "<<Betegek[i].getFelhNev()<<";"<<endl;
+            szam++;
         }
         else{
             std::copy_if (Betegek.begin(), Betegek.end(), std::back_inserter(newBetegek), [betegNev](const Beteg& beteg){
