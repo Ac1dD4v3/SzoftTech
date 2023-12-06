@@ -74,7 +74,8 @@ void betegkezdolap(){
         cout<<"Recept igenyelve!"<<endl;
     }
     else if(valasztas==2){
-        cout<<"Recept igenylesehez irja be az 1-es szamot!"<<endl;
+        cout<<"Recept igenylesehez irja be az 1-es szamot!"<<endl
+             <<"Ha kis szeretne lepni a rendszerbol, nyomja meg a 3-as szamot" << endl;
         betegkezdolap();
     }
     else{
