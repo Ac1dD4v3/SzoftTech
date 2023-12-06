@@ -4,6 +4,8 @@
 
 class Datum
 {
+private:
+
 public:
     Datum();
 };

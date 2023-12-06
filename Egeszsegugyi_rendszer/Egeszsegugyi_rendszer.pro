@@ -5,7 +5,9 @@ CONFIG -= qt
 
 SOURCES += \
     beteg.cpp \
+    datum.cpp \
     felhasznalo.cpp \
+    gyogyszer.cpp \
     gyogyszertar.cpp \
 #    hiba.cpp \
         main.cpp \
@@ -20,8 +22,10 @@ SOURCES += \
 HEADERS += \
     HealthcareSystem.h \
     beteg.h \
+    datum.h \
     felhasznalo.h \
 #    gyogyszer.h \
+    gyogyszer.h \
     gyogyszertar.h \
 #    hiba.h \
     orvos.h \
