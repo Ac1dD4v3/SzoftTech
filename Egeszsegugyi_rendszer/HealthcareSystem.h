@@ -18,7 +18,7 @@ namespace valami {
                 felhasznalok.push_back(std::make_shared<Orvos>(1, "Semmelweis","","",""));
 
                 // ha a beteg.txt-bol olvasod
-                // felhasznalok.push_back(std::make_shared<Beteg>(0,"","","",""));
+                felhasznalok.push_back(std::make_shared<Beteg>(1,"Beteg","","",1));
             }
             virtual ~HealthcareSystem() {}
 
@@ -26,6 +26,14 @@ namespace valami {
                 auto user = std::find_if(felhasznalok.begin(), felhasznalok.end(), [&nev](const FelhasznaloPtr& user) { return user->getFelhNev() == nev; } );
                 if (user != felhasznalok.end()) {
                     return std::dynamic_pointer_cast<Orvos>(*user);
+                }
+                return nullptr;
+            }
+
+            static BetegPtr getBeteg(const std::string& nev) {
+                auto user = std::find_if(felhasznalok.begin(), felhasznalok.end(), [&nev](const FelhasznaloPtr& user) { return user->getFelhNev() == nev; } );
+                if (user != felhasznalok.end()) {
+                    return std::dynamic_pointer_cast<Beteg>(*user);
                 }
                 return nullptr;
             }

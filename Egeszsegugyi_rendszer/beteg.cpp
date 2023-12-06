@@ -30,3 +30,25 @@ void Beteg::setTajSzam(int ujtaj)
 {
     TAJ_szam=ujtaj;
 }
+
+void Beteg::receptIgenylese()
+{
+    ofstream igenyelreceptek;
+    igenyelreceptek.open("igenyeltreceptek.txt");
+    if(igenyelreceptek.is_open()){
+        cout<<"Ird be a gyogyszer nevet: ";
+        string gyogyszerneve;
+        cin>>gyogyszerneve;
+        igenyelreceptek<<getFelhNev()<<";"<<gyogyszerneve;
+    }
+    else{
+        cout<<"Nem lehet megnyitni"<<endl;
+    }
+}
+
+void Beteg::receptekMegtekintese()
+{
+    for(auto recept : receptek){
+        cout<<recept.getLejarati_datum()<<" "<<recept.getOrvosneve()<<" "<<recept.getGyogyszerneve()<<endl;
+    }
+}

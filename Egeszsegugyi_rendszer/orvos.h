@@ -8,7 +8,6 @@
 #include <memory>
 #include "recept.h"
 #include <map>
-#include "recept.h"
 namespace valami {
     class Orvos : public Felhasznalo
     {
