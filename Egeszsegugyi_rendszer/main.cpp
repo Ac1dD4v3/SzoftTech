@@ -51,7 +51,7 @@ void orvosikezdolap(){
         HealthcareSystem::getOrvos("Semmelweis")->receptLetrehozasa();
     }
     else if(valasztas==4){
-        cout<<"Recept torolve!"<<endl;
+        HealthcareSystem::getOrvos("Semmelweis")->receptTorlese();
     }
     else{
         cout<<"Viszlat!"<<endl;
@@ -63,17 +63,21 @@ void betegkezdolap(){
     int valasztas;
     cout << "Valassz a lehetosegek kozul: "<<endl
         <<"1: Recept igenylese;"<<endl
-        <<"2: Segitseg;"<<endl
-        <<"3: Kilepes;"<<endl;
+        <<"2: Receptek megtekintese;"<<endl
+        <<"3: Segitseg;"<<endl
+        <<"4: Kilepes;"<<endl;
     cin>>valasztas;
-    if(valasztas>3 || valasztas<1){
+    if(valasztas>4|| valasztas<1){
         cout<<"Nincs ilyen lehetoseg"<<endl;
         betegkezdolap();
     }
     else if(valasztas==1){
-        cout<<"Recept igenyelve!"<<endl;
+        HealthcareSystem::getBeteg("Beteg")->receptIgenylese();
     }
     else if(valasztas==2){
+        HealthcareSystem::getBeteg("Beteg")->receptekMegtekintese();
+    }
+    else if(valasztas==3){
         cout<<"Recept igenylesehez irja be az 1-es szamot!"<<endl;
         betegkezdolap();
     }
