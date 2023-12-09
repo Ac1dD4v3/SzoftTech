@@ -1,1 +1,2 @@
 Beteg;valamiert
+Beteg_Jancsi;ALma
