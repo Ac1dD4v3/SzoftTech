@@ -2,11 +2,13 @@
 
 Felhasznalo::Felhasznalo(int SzID, const string &felh_nev_,
                          const string &felh_jelsz_,
-                         const string &felh_email_):
+                         const string &felh_email_,
+                         const FelhasznaloTipus tipus):
     SzID(SzID),
     felh_nev(felh_nev_),
     felh_jelsz(felh_jelsz_),
-    felh_email(felh_email_)
+    felh_email(felh_email_),
+    tipus(tipus)
 {}
 
 int Felhasznalo::getSzID() const

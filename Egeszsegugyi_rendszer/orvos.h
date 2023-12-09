@@ -17,7 +17,7 @@ namespace valami {
         vector<Beteg> Betegek;
         map<string,Recept> feladott_receptek;
     public:
-        Orvos(int SzID,const string &nev_, const string &jelsz_, const string &email_, const string& OTH_kod_);
+        Orvos(int SzID, const string &nev_, const string &jelsz_, const string &email_, const string& OTH_kod_);
         string getOTH_kod() const;
         void setOTH_kod(const string& ujoth);
         vector<Beteg> betegFelvetele();

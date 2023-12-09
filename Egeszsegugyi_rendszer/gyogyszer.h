@@ -8,10 +8,11 @@ using namespace std;
 class Gyogyszer
 {
 private:
-    string Nev, FelhasznalasiUtmutato;
+    string Nev;
     int Lejarati_datum;
+    string FelhasznalasiUtmutato;
 public:
-    Gyogyszer(const string& Nev, int Lejarati_datum, const string& FelhasznalasiUtmutato,);
+    Gyogyszer(const string& Nev, int Lejarati_datum, const string& FelhasznalasiUtmutato);
 };
 
 #endif // GYOGYSZER_H

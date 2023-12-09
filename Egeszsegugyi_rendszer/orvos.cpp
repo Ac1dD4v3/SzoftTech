@@ -1,4 +1,5 @@
 #include "orvos.h"
+#include "HealthcareSystem.h"
 
 namespace valami {
     string Orvos::getOTH_kod() const
@@ -13,69 +14,27 @@ namespace valami {
 
     vector<Beteg> Orvos::betegFelvetele()
     {
-        vector<Beteg> ujlista;
-        ifstream beteginput;
-
-        beteginput.open("beteginput.txt");
-        if(!beteginput.is_open()){
-            //hiba osztaly
-            cout<<"nem sikerult megnyitni"<<endl;
+        vector<BetegPtr> ujlista = HealthcareSystem::instance()->getBetegek();
+        
+        int szam=0;
+        for(auto beteg : ujlista){
+            cout<<szam<<": "<<beteg->getSzID()<<" "<<beteg->getFelhNev()<<" "<<beteg->getFelhJelszo()<<" "<<beteg->getFelhEmail()<<" "<<beteg->getTajSzam()<<endl;
+            szam++;
         }
-
-        else{
-            string line, part;
-            while (!beteginput.eof()) {
-                getline(beteginput, line);
-                if (line != "") {
-                    stringstream ss(line);
-                    string parts[5];
-                    int idx = 0;
-                    while (getline(ss, part, ';')) {
-                        parts[idx++] = part;
-                    }
-                    int szid = stoi(parts[0]);
-                    string nev = parts[1];
-                    string jelszo = parts[2];
-                    string email = parts[3];
-                    int TAJ_szam = stoi(parts[4]);
-                    ujlista.push_back(Beteg(szid,nev, jelszo, email, TAJ_szam));
-
-                }
+        int kivalasztott;
+        cout<<"Valaszd ki a beteget!"<<endl;
+        cin>>kivalasztott;
+        for(int i=0;i<=kivalasztott;i++){
+            if(i==kivalasztott){
+                Betegek.push_back(*(ujlista[i]));
             }
-            int szam=0;
-            for(auto beteg : ujlista){
-                cout<<szam<<": "<<beteg.getSzID()<<" "<<beteg.getFelhNev()<<" "<<beteg.getFelhJelszo()<<" "<<beteg.getFelhEmail()<<" "<<beteg.getTajSzam()<<endl;
-                szam++;
-            }
-            int kivalasztott;
-            cout<<"Valaszd ki a beteget!"<<endl;
-            cin>>kivalasztott;
-            for(int i=0;i<=kivalasztott;i++){
-                if(i==kivalasztott){
-                    Betegek.push_back(ujlista[i]);
-                }
-            }
-            cout<<endl;
         }
+        cout<<endl;
         return Betegek;
     }
 
     void Orvos::betegTorlese(const string &betegNev){
-        vector<Beteg> newBetegek;
-        auto it=find_if(Betegek.begin(),Betegek.end(),[&betegNev](const Beteg& beteg){return beteg.getFelhNev()==betegNev;});
-        if(it==Betegek.end()){
-            cout<<"nincs ilyen nevu beteg"<<endl;
-        }
-        else{
-            std::copy_if (Betegek.begin(), Betegek.end(), std::back_inserter(newBetegek), [betegNev](const Beteg& beteg){
-                //cout << "c: " << beteg.getFelhNev() << endl;
-                return beteg.getFelhNev() != betegNev;
-            });
-            Betegek = newBetegek;
-            for(auto beteg : Betegek){
-                cout<<beteg.getFelhNev()<<endl;
-            }
-        }
+        std::remove_if(Betegek.begin(),Betegek.end(),[&betegNev](const Beteg& beteg){return beteg.getFelhNev()==betegNev;});
     }
 
     void Orvos::receptLetrehozasa()
@@ -127,7 +86,7 @@ namespace valami {
                 const string &jelsz_,
                 const string &email_,
                 const string &OTH_kod_):
-        Felhasznalo(SzID,nev_,jelsz_,email_),
+        Felhasznalo(SzID,nev_,jelsz_,email_, FelhasznaloTipus::ORVOS),
         OTH_kod(OTH_kod_)
     {}
 }

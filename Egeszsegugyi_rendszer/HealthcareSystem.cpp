@@ -1,3 +1,3 @@
 #include "HealthcareSystem.h"
 
-std::vector<valami::HealthcareSystem::FelhasznaloPtr> valami::HealthcareSystem::felhasznalok = {};
+valami::HealthcareSystem* valami::HealthcareSystem::m_instance = nullptr;

@@ -18,7 +18,7 @@
 using namespace std;
 using namespace valami;
 
-void orvosikezdolap(){
+void orvosikezdolap(const OrvosPtr& orvos){
     int valasztas;
     cout << "Valassz a lehetosegek kozul: "<<endl
         <<"1: Beteg felvetele;"<<endl
@@ -27,38 +27,42 @@ void orvosikezdolap(){
         <<"4: Recept torlese;"<<endl
         <<"5: Kilepes;"<<endl;
     cin>>valasztas;
+
     if(valasztas>5 || valasztas<1){
         cout<<"Nincs ilyen lehetoseg"<<endl;
-        orvosikezdolap();
+        orvosikezdolap(orvos);
     }
     else if(valasztas==1){
-        HealthcareSystem::getOrvos("Semmelweis")->betegFelvetele();
+        orvos->betegFelvetele();
         system("CLS");
         cout<<"Beteg lista frissitve! Betg hozzaadva"<<endl;
-        orvosikezdolap();
-        //ide jönnek az osztalyok fuggvenyei
+        orvosikezdolap(orvos);
     }
-    else if(valasztas==2){
-        HealthcareSystem::getOrvos("Semmelweis")->getBetegek();
-        string nev;
+
+    else if(valasztas == 2){
+        orvos->getBetegek();
         cout<<"Kerlek ird be a beteg nevet: ";
-        cin>>nev;
-        HealthcareSystem::getOrvos("Semmelweis")->betegTorlese(nev);
+        string nev;
+        cin >> nev;
+        orvos->betegTorlese(nev);
+        orvosikezdolap(orvos);
         //system("CLS");
 
     }
     else if(valasztas==3){
-        HealthcareSystem::getOrvos("Semmelweis")->receptLetrehozasa();
+        orvos->receptLetrehozasa();
+        orvosikezdolap(orvos);
     }
     else if(valasztas==4){
-        HealthcareSystem::getOrvos("Semmelweis")->receptTorlese();
+        orvos->receptTorlese();
+        orvosikezdolap(orvos);
     }
     else{
         cout<<"Viszlat!"<<endl;
     }
 }
 
-void betegkezdolap(){
+void betegkezdolap(const BetegPtr& beteg){
     // system("CLS");
     int valasztas;
     cout << "Valassz a lehetosegek kozul: "<<endl
@@ -69,24 +73,27 @@ void betegkezdolap(){
     cin>>valasztas;
     if(valasztas>4 || valasztas<1){
         cout<<"Nincs ilyen lehetoseg"<<endl;
-        betegkezdolap();
+        betegkezdolap(beteg);
     }
     else if(valasztas==1){
-        HealthcareSystem::getBeteg("Beteg")->receptIgenylese();
+        beteg->receptIgenylese();
+        betegkezdolap(beteg);
     }
     else if(valasztas==2){
-        HealthcareSystem::getBeteg("Beteg")->receptekMegtekintese();
+        beteg->receptekMegtekintese();
+        betegkezdolap(beteg);
     }
     else if(valasztas==3){
-        cout<<"Recept igenylesehez irja be az 1-es szamot!"<<endl;
-        betegkezdolap();
+        cout<<"Recept igenylesehez irja be az 1-es szamot!"<<endl
+            <<"Recept megtekintesehez irja be az 2-es szamot!"<<endl;
+        betegkezdolap(beteg);
     }
     else{
         cout << "Viszlat!" << endl;
     }
 }
 
-void gyogyszertarkezdolap(){
+void gyogyszertarkezdolap(const GyogyszertarPtr& gyogyszertar){
     int valasztas;
     cout<<endl;
     cout << "Valassz a lehetosegek kozul: "<<endl
@@ -98,10 +105,10 @@ void gyogyszertarkezdolap(){
     cin>>valasztas;
     if(valasztas>5 || valasztas<1){
         cout<<"Nincs ilyen lehetoseg"<<endl;
-        orvosikezdolap();
+        gyogyszertarkezdolap(gyogyszertar);
     }
     else if(valasztas==1){
-        cout<<"Recept torlese!"<<endl;//ide jönnek az osztalyok fuggvenyei
+        cout<<"Recept torlese!"<<endl;
     }
     else if(valasztas==2){
         cout<<"Elerheto gyogyszerek: a b c!"<<endl;
@@ -117,41 +124,38 @@ void gyogyszertarkezdolap(){
     }
 }
 
-void orvosibelepes(){}
-void betegbelepes(){}
-void gyogyszertarbelepes(){}
-
-void szerepkorvalasztas(){
-    int szerepkornumber;
-    cout<<"Valaszd ki a szerepkorod, es ird be a szamat: "<<endl;
-    cout<<"Orvos: 1"<<endl<<"Beteg: 2"<<endl<<"Gyogyszertar: 3"<<endl;
-    cin>>szerepkornumber;
-    if(szerepkornumber>3 || szerepkornumber<1){
-        cout<<"Nem megfelelo szerepkor"<<endl;
-        szerepkorvalasztas();
-    }
-    else if(szerepkornumber==1){
-        //orvosibelepes();
-        system("CLS");
-        orvosikezdolap();
-    }
-    else if(szerepkornumber==2){
-        //betegbelepes();
-        // system("CLS");
-        betegkezdolap();
-    }
-    else if(szerepkornumber==3){
-        //gyogyszertarbelepes();
-        // system("CLS");
-        gyogyszertarkezdolap();
-    }
-}
-
 int main()
 {
-    auto sys = std::make_shared<HealthcareSystem>();
-    szerepkorvalasztas();
+    // szerepkorvalasztas();
+    std::cout << "felhasznalonev: " << std::endl;
+    string username;
+    std::cin >> username;
 
+    std::cout << "jelszo: " << std::endl;
+    string pwd;
+    std::cin >> pwd;
+    auto user = HealthcareSystem::instance()->bejelentkezes(username, pwd);
+    if (user->getTipus() == FelhasznaloTipus::ORVOS) {
+        auto orvos = std::dynamic_pointer_cast<Orvos>(user);
+        if (!orvos) {
+            throw "balfaszvagy";
+        }
+        orvosikezdolap(orvos);
+    }
+    else if (user->getTipus() == FelhasznaloTipus::BETEG) {
+        auto beteg = std::dynamic_pointer_cast<Beteg>(user);
+        if (!beteg) {
+            throw "balfaszvagy";
+        }
+        betegkezdolap(beteg);
+    }
+    else if(user->getTipus() == FelhasznaloTipus::GYOGYSZERTAR) {
+        auto gyogyszertar = std::dynamic_pointer_cast<Gyogyszertar>(user);
+        if (!gyogyszertar) {
+            throw "balfaszvagy";
+        }
+        gyogyszertarkezdolap(gyogyszertar);
+    }
     return 0;
 }
 

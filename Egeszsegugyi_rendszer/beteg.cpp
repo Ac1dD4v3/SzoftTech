@@ -17,7 +17,7 @@ Beteg::Beteg(int SzID,
              const string &jelsz_,
              const string& email_,
              int TAJ_szam_):
-    Felhasznalo(SzID,nev_,jelsz_,email_),
+    Felhasznalo(SzID,nev_,jelsz_,email_, FelhasznaloTipus::BETEG),
     TAJ_szam(TAJ_szam_)
 {}
 
@@ -34,7 +34,7 @@ void Beteg::setTajSzam(int ujtaj)
 void Beteg::receptIgenylese()
 {
     ofstream igenyelreceptek;
-    igenyelreceptek.open("igenyeltreceptek.txt");
+    igenyelreceptek.open("igenyeltreceptek.txt", std::ios_base::app);
     if(igenyelreceptek.is_open()){
         cout<<"Ird be a gyogyszer nevet: ";
         string gyogyszerneve;

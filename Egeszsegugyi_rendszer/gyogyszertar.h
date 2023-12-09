@@ -3,6 +3,7 @@
 
 #include <list>
 #include "felhasznalo.h"
+#include <memory>
 //#include "gyogyszer.h"
 namespace valami{
     class Gyogyszertar : public Felhasznalo
@@ -20,5 +21,6 @@ namespace valami{
         void elerhetoGyogyszerekHozzaadasa();
 
     };
+    typedef std::shared_ptr<Gyogyszertar> GyogyszertarPtr;
 }
 #endif // GYOGYSZERTAR_H
