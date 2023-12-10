@@ -1,6 +1,5 @@
 #include "datum.h"
-
-Datum::Datum()
-{
-
-}
+using namespace valami;
+Datum::Datum(const string &datum):
+    datum(datum)
+{}

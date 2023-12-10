@@ -176,7 +176,8 @@ release/orvos.o: ../Egeszsegugyi_rendszer/orvos.cpp ../Egeszsegugyi_rendszer/orv
 		../Egeszsegugyi_rendszer/gyogyszertar.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\orvos.o ..\Egeszsegugyi_rendszer\orvos.cpp
 
-release/recept.o: ../Egeszsegugyi_rendszer/recept.cpp ../Egeszsegugyi_rendszer/recept.h
+release/recept.o: ../Egeszsegugyi_rendszer/recept.cpp ../Egeszsegugyi_rendszer/recept.h \
+		../Egeszsegugyi_rendszer/datum.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\recept.o ..\Egeszsegugyi_rendszer\recept.cpp
 
 release/szerepkor.o: ../Egeszsegugyi_rendszer/szerepkor.cpp ../Egeszsegugyi_rendszer/szerepkor.h \

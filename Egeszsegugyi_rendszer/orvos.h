@@ -8,6 +8,7 @@
 #include <memory>
 #include "recept.h"
 #include <map>
+#include "datum.h"
 namespace valami {
     class Orvos : public Felhasznalo
     {
@@ -21,7 +22,7 @@ namespace valami {
         string getOTH_kod() const;
         void setOTH_kod(const string& ujoth);
         vector<Beteg> betegFelvetele();
-        void betegTorlese(const std::string& betegNev);
+        void betegTorlese();
         void receptLetrehozasa();
         void receptTorlese();
         virtual ~Orvos() {}

@@ -176,7 +176,8 @@ debug/orvos.o: ../Egeszsegugyi_rendszer/orvos.cpp ../Egeszsegugyi_rendszer/orvos
 		../Egeszsegugyi_rendszer/gyogyszertar.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\orvos.o ..\Egeszsegugyi_rendszer\orvos.cpp
 
-debug/recept.o: ../Egeszsegugyi_rendszer/recept.cpp ../Egeszsegugyi_rendszer/recept.h
+debug/recept.o: ../Egeszsegugyi_rendszer/recept.cpp ../Egeszsegugyi_rendszer/recept.h \
+		../Egeszsegugyi_rendszer/datum.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\recept.o ..\Egeszsegugyi_rendszer\recept.cpp
 
 debug/szerepkor.o: ../Egeszsegugyi_rendszer/szerepkor.cpp ../Egeszsegugyi_rendszer/szerepkor.h \

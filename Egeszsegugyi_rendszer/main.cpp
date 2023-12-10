@@ -36,21 +36,24 @@ void orvosikezdolap(const OrvosPtr& orvos){
         orvos->betegFelvetele();
         system("CLS");
         cout<<"Beteg lista frissitve! Betg hozzaadva"<<endl;
+        cout<<endl;
         orvosikezdolap(orvos);
     }
 
     else if(valasztas == 2){
-        orvos->getBetegek();
-        cout<<"Kerlek ird be a beteg nevet: ";
-        string nev;
-        cin >> nev;
-        orvos->betegTorlese(nev);
+        orvos->betegTorlese();
+        system("CLS");
+        cout<<"Beteg torolve a listarol"<<endl;
+        cout<<endl;
         orvosikezdolap(orvos);
         //system("CLS");
 
     }
     else if(valasztas==3){
         orvos->receptLetrehozasa();
+        system("CLS");
+        cout<<"Recept hozzaadva a beteghez"<<endl;
+        cout<<endl;
         orvosikezdolap(orvos);
     }
     else if(valasztas==4){

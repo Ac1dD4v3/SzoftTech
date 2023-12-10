@@ -7,9 +7,9 @@ vector<Recept> Beteg::getReceptek() const
     return receptek;
 }
 
-void Beteg::setReceptek(const vector<Recept> &newReceptek)
+void Beteg::addReceptek(const Recept& recept)
 {
-    receptek = newReceptek;
+    receptek.push_back(recept);
 }
 
 Beteg::Beteg(int SzID,

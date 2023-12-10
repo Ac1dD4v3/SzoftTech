@@ -1,11 +1,11 @@
 #include "recept.h"
 using namespace valami;
-int Recept::getLejarati_datum() const
+Datum Recept::getLejarati_datum() const
 {
     return lejarati_datum;
 }
 
-void Recept::setLejarati_datum(int newLejarati_datum)
+void Recept::setLejarati_datum(string newLejarati_datum)
 {
     lejarati_datum = newLejarati_datum;
 }
@@ -41,7 +41,7 @@ void Recept::setGyogyszerneve(const string &newGyogyszerneve)
     gyogyszerneve = newGyogyszerneve;
 }
 
-Recept::Recept(int lejarati_datum, const string &betegneve, const string &orvosneve, const string &gyogyszerneve):
+Recept::Recept(const string& lejarati_datum, const string &betegneve, const string &orvosneve, const string &gyogyszerneve):
     lejarati_datum(lejarati_datum),
     betegneve(betegneve),
     orvosneve(orvosneve),

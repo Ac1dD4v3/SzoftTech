@@ -22,7 +22,7 @@ public:
     void receptekMegtekintese();
     void segitseg();
     vector<Recept> getReceptek() const;
-    void setReceptek(const vector<Recept> &newReceptek);
+    void addReceptek(const Recept& recept);
 };
 typedef std::shared_ptr<Beteg> BetegPtr;
 }
