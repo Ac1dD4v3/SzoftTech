@@ -9,6 +9,8 @@
 #include "recept.h"
 #include <map>
 #include "datum.h"
+#include <iostream>
+using namespace std;
 namespace valami {
     class Orvos : public Felhasznalo
     {

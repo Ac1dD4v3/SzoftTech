@@ -2,14 +2,14 @@
 using namespace valami;
 
 
-vector<Recept> Beteg::getReceptek() const
+vector<Recept> Beteg::getF_Receptek() const
 {
-    return receptek;
+    return f_receptek;
 }
 
-void Beteg::addReceptek(const Recept& recept)
+void Beteg::addF_Receptek(const Recept& recept)
 {
-    receptek.push_back(recept);
+    f_receptek.push_back(recept);
 }
 
 Beteg::Beteg(int SzID,
@@ -48,7 +48,7 @@ void Beteg::receptIgenylese()
 
 void Beteg::receptekMegtekintese()
 {
-    for(auto recept : receptek){
+    for(auto recept : f_receptek){
         cout<<recept.getLejarati_datum()<<" "<<recept.getOrvosneve()<<" "<<recept.getGyogyszerneve()<<endl;
     }
 }

@@ -2,13 +2,10 @@
 #include <string>
 #include <fstream>
 #include "beteg.h"
-//#include "datum.h"
 #include "felhasznalo.h"
-//#include "gyogyszer.h"
 #include "gyogyszertar.h"
 //#include "hiba.h"
 #include "orvos.h"
-//#include "recept.h"
 #include "szerepkor.h"
 #include "szerepkortipus.h"
 #include "stdlib.h"

@@ -1,0 +1,3 @@
+2;100;Tester;admin@gamil.com;120123
+2;200;Beteg_Jancsi;emailcim@mail.com;120346
+2;300;Kis_Geza;igaziemail@gmail.com;120567
