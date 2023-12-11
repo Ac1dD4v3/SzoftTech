@@ -10,6 +10,7 @@ SOURCES += \
     gyogyszer.cpp \
     gyogyszertar.cpp \
 #    hiba.cpp \
+    hiba.cpp \
         main.cpp \
     orvos.cpp \
     recept.cpp \
@@ -28,6 +29,7 @@ HEADERS += \
     gyogyszer.h \
     gyogyszertar.h \
 #    hiba.h \
+    hiba.h \
     orvos.h \
     recept.h \
     szerepkor.h \

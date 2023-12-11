@@ -1,4 +1,33 @@
 #include "gyogyszer.h"
+string Gyogyszer::getNev() const
+{
+    return Nev;
+}
+
+void Gyogyszer::setNev(const string &newNev)
+{
+    Nev = newNev;
+}
+
+int Gyogyszer::getLejarati_datum() const
+{
+    return Lejarati_datum;
+}
+
+void Gyogyszer::setLejarati_datum(int newLejarati_datum)
+{
+    Lejarati_datum = newLejarati_datum;
+}
+
+string Gyogyszer::getFelhasznalasiUtmutato() const
+{
+    return FelhasznalasiUtmutato;
+}
+
+void Gyogyszer::setFelhasznalasiUtmutato(const string &newFelhasznalasiUtmutato)
+{
+    FelhasznalasiUtmutato = newFelhasznalasiUtmutato;
+}
 
 Gyogyszer::Gyogyszer(const string &Nev, int Lejarati_datum, const string &FelhasznalasiUtmutato):
     Nev(Nev),

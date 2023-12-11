@@ -31,41 +31,25 @@ namespace valami {
         }
         cout<<endl;
         fstream betegkiir;
-        betegkiir.open("orvos_betegei.txt",std::ios_base::app);
+        try{
+        betegkiir.open("orvos_betegei.txt");
         if(betegkiir.is_open()){
-            for(auto beteg : Betegek){
-                betegkiir<<FelhasznaloTipus::BETEG<<";"<<beteg.getSzID()<<";"<<beteg.getFelhNev()<<";"<<beteg.getFelhEmail()<<";"<<beteg.getTajSzam()<<"\n";
+            for(int i=0;i<Betegek.size();i++){
+                betegkiir<<FelhasznaloTipus::BETEG<<";"<<Betegek[i].getSzID()<<";"<<Betegek[i].getFelhNev()<<";"<<Betegek[i].getFelhJelszo()<<";"<<Betegek[i].getFelhEmail()<<";"<<Betegek[i].getTajSzam()<<"\n";
             }
         }
+        }catch (const Hiba& e) {
+        // Elkapjuk a saját exception-t és kiírjuk az üzenetét
+        std::cout << "Hiba történt: " << e.what() << std::endl;
+        }
+        betegkiir.close();
         return Betegek;
     }
 
     void Orvos::betegTorlese(){
-        //beolvasas
-        vector<Beteg> ujlista;
-        fstream betoltes;
-        betoltes.open("orvos_betegei.txt");
-        string line, part;
-        while (!betoltes.eof()) {
-            getline(betoltes, line);
-            if (line == "") continue;
-            stringstream ss(line);
-            string parts[6];
-            int idx = 0;
-            while (getline(ss, part, ';')) {
-                parts[idx++] = part;
-            }
-            string tipus = parts[0];
-            int szid = stoi(parts[1]);
-            string nev = parts[2];
-            string jelszo = parts[3];
-            string email = parts[4];
-            int TAJ_szam = stoi(parts[5]);
-            ujlista.push_back(Beteg(szid,nev, jelszo, email, TAJ_szam));
-        }
         //kiiratas
         int szam=0;
-        for(auto beteg : ujlista){
+        for(auto beteg : Betegek){
             cout<<szam<<". "<<beteg.getSzID()<<" "<<beteg.getFelhNev()<<" "<<beteg.getFelhEmail()<<endl;
             szam++;
         }
@@ -78,18 +62,21 @@ namespace valami {
                 Betegek.erase(Betegek.begin()+i);
             }
         }
-        ujlista=Betegek;
+        ofstream betegtorol;
+        betegtorol.open("orvos_betegei.txt",std::ios_base::trunc);
+        betegtorol.close();
         //fileba iras
         fstream betegkiir;
         betegkiir.open("orvos_betegei.txt",std::ios_base::app);
         if(betegkiir.is_open()){
-            for(auto beteg : Betegek){
-                betegkiir<<FelhasznaloTipus::BETEG<<";"<<beteg.getSzID()<<";"<<beteg.getFelhNev()<<";"<<beteg.getFelhEmail()<<";"<<beteg.getTajSzam()<<"\n";
+            for(int i=0;i<Betegek.size();i++){
+                betegkiir<<FelhasznaloTipus::BETEG<<";"<<Betegek[i].getSzID()<<";"<<Betegek[i].getFelhNev()<<";"<<Betegek[i].getFelhJelszo()<<";"<<Betegek[i].getFelhEmail()<<";"<<Betegek[i].getTajSzam()<<"\n";
             }
         }
+        betegkiir.close();
     }
 
-    void Orvos::receptLetrehozasa()
+    int Orvos::receptLetrehozasa()
     {
         cout<<"Kerem toltse ki a sablont"<<endl;
         string lejarati_datum,betegneve,orvosneve,gyogyszerneve;
@@ -98,7 +85,7 @@ namespace valami {
 
         int szam=0;
         for(auto beteg : Betegek){
-            cout<<szam<<" "<<beteg.getFelhNev()<<endl;
+            cout<<szam<<" "<<beteg.getFelhNev()<<beteg.getFelhJelszo()<<endl;
             szam++;
         }
         int valasztott;
@@ -119,6 +106,7 @@ namespace valami {
 
         HealthcareSystem::instance()->getBeteg(betegneve)->addF_Receptek(a);
         feladott_receptek.insert(make_pair(betegneve,a));
+        return 0;
     }
 
     void Orvos::receptTorlese()

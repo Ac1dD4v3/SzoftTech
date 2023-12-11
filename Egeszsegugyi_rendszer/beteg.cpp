@@ -33,17 +33,22 @@ void Beteg::setTajSzam(int ujtaj)
 
 void Beteg::receptIgenylese()
 {
-    ofstream igenyelreceptek;
-    igenyelreceptek.open("igenyeltreceptek.txt", std::ios_base::app);
-    if(igenyelreceptek.is_open()){
-        cout<<"Ird be a gyogyszer nevet: ";
-        string gyogyszerneve;
-        cin>>gyogyszerneve;
-        igenyelreceptek<<getFelhNev()<<";"<<gyogyszerneve;
-    }
-    else{
-        cout<<"Nem lehet megnyitni"<<endl;
-    }
+    try{
+        ofstream igenyelreceptek;
+        igenyelreceptek.open("igenyeltreceptek.txt", std::ios_base::app);
+        if(igenyelreceptek.is_open()){
+            cout<<"Ird be a gyogyszer nevet: ";
+            string gyogyszerneve;
+            cin>>gyogyszerneve;
+            igenyelreceptek<<getFelhNev()<<";"<<gyogyszerneve;
+        }
+        else{
+            throw Hiba("Nem nyilik meg");
+        }
+    }catch (const Hiba& e) {
+            // Elkapjuk a saját exception-t és kiírjuk az üzenetét
+            std::cout << "Hiba történt: " << e.what() << std::endl;
+        }
 }
 
 void Beteg::receptekMegtekintese()

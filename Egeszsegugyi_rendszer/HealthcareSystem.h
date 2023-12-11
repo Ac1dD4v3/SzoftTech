@@ -4,6 +4,7 @@
 #include "felhasznalo.h"
 #include "orvos.h"
 #include "gyogyszertar.h"
+#include "gyogyszer.h"
 
 namespace valami {
 
@@ -53,6 +54,13 @@ namespace valami {
                 std::vector<BetegPtr> betegek;
                 std::transform(betegUsers.begin(), betegUsers.end(), std::back_inserter(betegek), [](const FelhasznaloPtr& ptr) {  return std::dynamic_pointer_cast<Beteg>(ptr); });
                 return betegek;
+            }
+
+            std::vector<GyogyszerPtr> getGyogyszerek() {
+                std::vector<GyogyszerPtr> gyogyszeres;
+                std::copy(gyogyszerek.begin(), gyogyszerek.end(), std::back_inserter(gyogyszeres));
+                std::transform(gyogyszeres.begin(), gyogyszeres.end(), std::back_inserter(gyogyszerek), [](const GyogyszerPtr& ptr) {  return std::dynamic_pointer_cast<Gyogyszer>(ptr); });
+                return gyogyszerek;
             }
 
             FelhasznaloPtr bejelentkezes(const std::string& nev, const std::string& pwd) {
@@ -128,8 +136,36 @@ namespace valami {
                         std::cout << "Nem ismert felhasznalo tipus '" << tipus << "'" << std::endl;
                     }
                 }
+            {
+                ifstream gyogyszerinput;
+                gyogyszerinput.open("gyogyszerek.txt");
+                if(!gyogyszerinput.is_open()){
+                    //hiba osztaly
+                    cout<<"nem sikerult megnyitni"<<endl;
+                    return;
+                }
+                    string line, part;
+                    while (!input.eof()) {
+                        getline(input, line);
+                        if (line == "") continue;
+
+                        stringstream ss(line);
+                        string tipusStr;
+                        getline(ss, tipusStr, ';');
+                            string parts[3];
+                            int idx = 0;
+                            while (getline(ss, part, ';')) {
+                                parts[idx++] = part;
+                            }
+                            string Nev = parts[0];
+                            int Lejarati_datum = stoi(parts[1]);
+                            string FelhasznalasiUtmutato = parts[2];
+                            gyogyszerek.push_back(std::make_shared<Gyogyszer>(Nev, Lejarati_datum,FelhasznalasiUtmutato));
+                        }
+                    }
             }
 
+            std::vector<GyogyszerPtr> gyogyszerek;
             std::vector<FelhasznaloPtr> felhasznalok;
             FelhasznaloPtr activeUser;
             static HealthcareSystem* m_instance;

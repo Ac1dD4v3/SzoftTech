@@ -3,6 +3,7 @@ release/datum.o
 release/felhasznalo.o
 release/gyogyszer.o
 release/gyogyszertar.o
+release/hiba.o
 release/main.o
 release/orvos.o
 release/recept.o

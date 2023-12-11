@@ -108,16 +108,20 @@ void gyogyszertarkezdolap(const GyogyszertarPtr& gyogyszertar){
         gyogyszertarkezdolap(gyogyszertar);
     }
     else if(valasztas==1){
-        cout<<"Recept torlese!"<<endl;
+        cout<<"Receptek torlese"<<endl;
+        gyogyszertarkezdolap(gyogyszertar);
     }
     else if(valasztas==2){
-        cout<<"Elerheto gyogyszerek: a b c!"<<endl;
+        gyogyszertar->listElerheto();
+        gyogyszertarkezdolap(gyogyszertar);
     }
     else if(valasztas==3){
-        cout<<"Elerheto gyogyszer torolve!"<<endl;
+        gyogyszertar->deleteElerheto();
+        gyogyszertarkezdolap(gyogyszertar);
     }
     else if(valasztas==4){
-        cout<<"Elerheto gyogyszer hozzaadva!"<<endl;
+        gyogyszertar->addElerheto();
+        gyogyszertarkezdolap(gyogyszertar);
     }
     else{
         cout << "Viszlat!" << endl;
@@ -140,6 +144,7 @@ int main()
         if (!orvos) {
             throw "balfaszvagy";
         }
+        system("CLS");
         orvosikezdolap(orvos);
     }
     else if (user->getTipus() == FelhasznaloTipus::BETEG) {

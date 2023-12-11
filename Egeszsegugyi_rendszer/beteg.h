@@ -8,6 +8,7 @@
 #include <vector>
 #include <fstream>
 #include <memory>
+#include "hiba.h"
 namespace valami{
 class Beteg : public Felhasznalo
 {
