@@ -23,7 +23,6 @@ namespace valami {
         Orvos(int SzID, const string &nev_, const string &jelsz_, const string &email_, const string& OTH_kod_);
         string getOTH_kod() const;
         void setOTH_kod(const string& ujoth);
-        void betegfeltotes();
         vector<Beteg> betegFelvetele();
         void betegTorlese();
         void receptLetrehozasa();

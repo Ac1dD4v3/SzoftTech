@@ -57,6 +57,8 @@ namespace valami {
             }
 
             std::vector<GyogyszerPtr> getGyogyszerek() {
+                std::vector<GyogyszerPtr> gyogyszersz;
+                std::transform(gyogyszerek.begin(), gyogyszerek.end(), std::back_inserter(gyogyszersz), [](const GyogyszerPtr& ptr) {  return std::dynamic_pointer_cast<Gyogyszer>(ptr); });
                 return gyogyszerek;
             }
 
@@ -145,10 +147,7 @@ namespace valami {
                     while (!input.eof()) {
                         getline(input, line);
                         if (line == "") continue;
-
                         stringstream ss(line);
-                        string tipusStr;
-                        getline(ss, tipusStr, ';');
                             string parts[3];
                             int idx = 0;
                             while (getline(ss, part, ';')) {

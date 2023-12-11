@@ -84,23 +84,13 @@ void Beteg::receptekMegtekintese()
         cout<<recept.getBetegneve()<<" "<<recept.getGyogyszerneve()<<" "<<recept.getLejarati_datum()<<" "<<recept.getOrvosneve()<<endl;
         cout<<endl;
     }
-//    vector<Recept> tmp;
-//    string nev = this->getFelhNev();
-//    cout<<nev<<endl;
-//    for(int i = 0; i< receptek.size();i++){
-//        if(receptek[i].getBetegneve()==nev){
-//            tmp.push_back(receptek[i]);
-//        }
-//    }
-//    //kiiratas
-//    if (!tmp.empty()) {
-//        int szam = 0;
-//        for (const auto& recept : tmp) {
-//            cout << szam << ". " << recept.getBetegneve() << " " << recept.getGyogyszerneve() << " " << recept.getLejarati_datum() << endl;
-//            szam++;
-//        }
-//    } else {
-//        cout << "Nincsenek elemek a listaban." << endl;
-//    }
+    string nev = HealthcareSystem::instance()->getBeteg(this->getFelhNev())->getFelhNev();
+    copy_if(receptek.begin(),receptek.end(),back_inserter(orvosaltal_receptek),[&nev](Recept& recept){return recept.getBetegneve()==nev;});
 
+    //kiiratas
+        int szam = 0;
+        for (auto recept : orvosaltal_receptek) {
+            cout << szam <<", Recept lejaratanak datuma: " << recept.getLejarati_datum() << ". Az On neve:" << recept.getBetegneve() << ", A felado orvos neve" << recept.getOrvosneve() << ", Recept lejaratanak datuma: " << recept.getGyogyszerneve() << endl;
+            szam++;
+        }
 }

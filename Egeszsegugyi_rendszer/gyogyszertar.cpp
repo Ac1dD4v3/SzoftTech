@@ -91,11 +91,68 @@ void Gyogyszertar::listElerheto() const
 
 void Gyogyszertar::deleteElerheto()
 {
+    //beolvasas
+    vector<Gyogyszer>gyogyszerek;
+    ifstream input;
+    input.open("elerheto_gyogyszerek.txt");
+    if(input.is_open()){
+        string line, part;
+        while (!input.eof()) {
+            getline(input, line);
+            if (line == "") continue;
+            stringstream ss(line);
+            string parts[3];
+            int idx = 0;
+            while (getline(ss, part, ';')) {
+                    parts[idx++] = part;
+                }
+            string nev = parts[0];
+            string lejarati_datum = parts[1];
+            string felhasznalasi = parts[2];
+            gyogyszerek.push_back(Gyogyszer(nev,lejarati_datum, felhasznalasi));
+        }
+    }
+    input.close();
 
+    //kiiratas
+    int szam=0;
+    for(auto gyogyszer : gyogyszerek){
+        cout<<szam<<". "<<gyogyszer.getNev()<<" "<<gyogyszer.getLejarati_datum()<<" "<<gyogyszer.getFelhasznalasiUtmutato()<<endl;
+        szam++;
+    }
+    //valasztas
+    int valasztott;
+    cout<<"Kerlek valaszd ki a torlendo receptet es ird be a szamat: "<<endl;
+    cin>>valasztott;
+    for(int i=0;i<gyogyszerek.size();i++){
+        if(valasztott==i){
+            gyogyszerek.erase(gyogyszerek.begin()+i);
+        }
+    }
+
+    //betegek tartalmának átadasa a Betegeknek
+    Elerhetok=gyogyszerek;
+
+    //file tartalmának törlése
+    ofstream recepttorol;
+    recepttorol.open("elerheto_gyogyszerek.txt",std::ios_base::trunc);
+    recepttorol.close();
+
+    //kiiras fileba
+    fstream receptkiir;
+    receptkiir.open("elerheto_gyogyszerek.txt",std::ios_base::app);
+
+    if(receptkiir.is_open()){
+        for(auto gyogyszer : Elerhetok){
+            receptkiir<<gyogyszer.getNev()<<";"<<gyogyszer.getLejarati_datum()<<";"<<gyogyszer.getFelhasznalasiUtmutato()<<"\n";
+        }
+    }
+    receptkiir.close();
 }
 
 void Gyogyszertar::addElerheto()
 {
+    //vector<GyogyszerPtr> ujlista = HealthcareSystem::instance()->getGyogyszerek();
     //beolvasas
     vector<Gyogyszer>gyogyszerek;
     ifstream input;
@@ -133,12 +190,9 @@ void Gyogyszertar::addElerheto()
     cin>>kivalasztott;
     for(int i=0;i<=kivalasztott;i++){
         if(i==kivalasztott){
-            gyogyszerek.push_back();
+            Elerhetok.push_back(gyogyszerek[i]);
         }
     }
-
-    Elerhetok=gyogyszerek;
-
     //file tartalmának törlése
     ofstream gyogyszertorol;
     gyogyszertorol.open("elerheto_gyogyszerek.txt",std::ios_base::trunc);
