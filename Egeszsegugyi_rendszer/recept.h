@@ -12,11 +12,11 @@ namespace valami {
     class Recept
     {
     private:
-        Datum lejarati_datum;
+        string lejarati_datum;
         string betegneve,orvosneve,gyogyszerneve;
     public:
         Recept(const string& lejarati_datum,const string& betegneve,const string& orvosneve,const string& gyogyszerneve);
-        Datum getLejarati_datum() const;
+        string getLejarati_datum() const;
         void setLejarati_datum(string newLejarati_datum);
         string getBetegneve() const;
         void setBetegneve(const string &newBetegneve);

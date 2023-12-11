@@ -145,7 +145,11 @@ release/beteg.o: ../Egeszsegugyi_rendszer/beteg.cpp ../Egeszsegugyi_rendszer/bet
 		../Egeszsegugyi_rendszer/felhasznalo.h \
 		../Egeszsegugyi_rendszer/datum.h \
 		../Egeszsegugyi_rendszer/recept.h \
-		../Egeszsegugyi_rendszer/hiba.h
+		../Egeszsegugyi_rendszer/hiba.h \
+		../Egeszsegugyi_rendszer/HealthcareSystem.h \
+		../Egeszsegugyi_rendszer/orvos.h \
+		../Egeszsegugyi_rendszer/gyogyszertar.h \
+		../Egeszsegugyi_rendszer/gyogyszer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\beteg.o ..\Egeszsegugyi_rendszer\beteg.cpp
 
 release/datum.o: ../Egeszsegugyi_rendszer/datum.cpp ../Egeszsegugyi_rendszer/datum.h

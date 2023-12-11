@@ -1,4 +1,5 @@
 #include "gyogyszer.h"
+using namespace valami;
 string Gyogyszer::getNev() const
 {
     return Nev;
@@ -9,7 +10,7 @@ void Gyogyszer::setNev(const string &newNev)
     Nev = newNev;
 }
 
-int Gyogyszer::getLejarati_datum() const
+string Gyogyszer::getLejarati_datum() const
 {
     return Lejarati_datum;
 }
@@ -29,7 +30,7 @@ void Gyogyszer::setFelhasznalasiUtmutato(const string &newFelhasznalasiUtmutato)
     FelhasznalasiUtmutato = newFelhasznalasiUtmutato;
 }
 
-Gyogyszer::Gyogyszer(const string &Nev, int Lejarati_datum, const string &FelhasznalasiUtmutato):
+Gyogyszer::Gyogyszer(const string &Nev, string Lejarati_datum, const string &FelhasznalasiUtmutato):
     Nev(Nev),
     Lejarati_datum(Lejarati_datum),
     FelhasznalasiUtmutato(FelhasznalasiUtmutato)

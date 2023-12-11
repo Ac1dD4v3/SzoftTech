@@ -18,7 +18,7 @@ namespace valami {
 
         string OTH_kod;
         vector<Beteg> Betegek;
-        map<string,Recept> feladott_receptek;
+        vector<Recept> feladott_receptek;
     public:
         Orvos(int SzID, const string &nev_, const string &jelsz_, const string &email_, const string& OTH_kod_);
         string getOTH_kod() const;
@@ -26,7 +26,7 @@ namespace valami {
         void betegfeltotes();
         vector<Beteg> betegFelvetele();
         void betegTorlese();
-        int receptLetrehozasa();
+        void receptLetrehozasa();
         void receptTorlese();
         virtual ~Orvos() {}
         void getBetegek() const;

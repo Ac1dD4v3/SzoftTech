@@ -14,7 +14,7 @@ class Beteg : public Felhasznalo
 {
 private:
     int TAJ_szam;
-    vector<Recept> f_receptek;
+    vector<Recept> orvosaltal_receptek;
     vector<Recept> igenyeltreceptek;
 public:
     Beteg(int SzID,const string &nev_,const string &jelsz_, const string &email_, int TAJ_szam_);

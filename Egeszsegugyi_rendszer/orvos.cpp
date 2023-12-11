@@ -47,9 +47,35 @@ namespace valami {
     }
 
     void Orvos::betegTorlese(){
+        //beolvasas
+        vector<Beteg>betegek;
+        ifstream input;
+        input.open("orvos_betegei.txt");
+        if(input.is_open()){
+            string line, part;
+            while (!input.eof()) {
+                getline(input, line);
+                if (line == "") continue;
+                stringstream ss(line);
+                string parts[6];
+                int idx = 0;
+                while (getline(ss, part, ';')) {
+                        parts[idx++] = part;
+                    }
+                int tipus = stoi(parts[0]);
+                int szid = stoi(parts[1]);
+                string nev = parts[2];
+                string jelszo = parts[3];
+                string email = parts[4];
+                int TAJ_szam = stoi(parts[5]);
+                betegek.push_back(Beteg(szid,nev, jelszo, email, TAJ_szam));
+            }
+        }
+        input.close();
+
         //kiiratas
         int szam=0;
-        for(auto beteg : Betegek){
+        for(auto beteg : betegek){
             cout<<szam<<". "<<beteg.getSzID()<<" "<<beteg.getFelhNev()<<" "<<beteg.getFelhEmail()<<endl;
             szam++;
         }
@@ -57,14 +83,20 @@ namespace valami {
         int valasztott;
         cout<<"Kerlek valaszd ki a torlendo beteget es ird be a szamat: "<<endl;
         cin>>valasztott;
-        for(int i=0;i<Betegek.size();i++){
+        for(int i=0;i<betegek.size();i++){
             if(valasztott==i){
-                Betegek.erase(Betegek.begin()+i);
+                betegek.erase(betegek.begin()+i);
             }
         }
+
+        //betegek tartalmának átadasa a Betegeknek
+        Betegek=betegek;
+
+        //file tartalmának törlése
         ofstream betegtorol;
         betegtorol.open("orvos_betegei.txt",std::ios_base::trunc);
         betegtorol.close();
+
         //fileba iras
         fstream betegkiir;
         betegkiir.open("orvos_betegei.txt",std::ios_base::app);
@@ -76,24 +108,51 @@ namespace valami {
         betegkiir.close();
     }
 
-    int Orvos::receptLetrehozasa()
+    void Orvos::receptLetrehozasa()
     {
+        //beolvasas
+        vector<Beteg>betegek;
+        ifstream input;
+        input.open("orvos_betegei.txt");
+        if(input.is_open()){
+            string line, part;
+            while (!input.eof()) {
+                getline(input, line);
+                if (line == "") continue;
+                stringstream ss(line);
+                string parts[6];
+                int idx = 0;
+                while (getline(ss, part, ';')) {
+                        parts[idx++] = part;
+                    }
+                int tipus = stoi(parts[0]);
+                int szid = stoi(parts[1]);
+                string nev = parts[2];
+                string jelszo = parts[3];
+                string email = parts[4];
+                int TAJ_szam = stoi(parts[5]);
+                betegek.push_back(Beteg(szid,nev, jelszo, email, TAJ_szam));
+            }
+        }
+        input.close();
+
+        //sablon kitoltese
         cout<<"Kerem toltse ki a sablont"<<endl;
         string lejarati_datum,betegneve,orvosneve,gyogyszerneve;
         cout<<"Lejarati datum: ";
         cin>>lejarati_datum;
 
         int szam=0;
-        for(auto beteg : Betegek){
+        for(auto beteg : betegek){
             cout<<szam<<" "<<beteg.getFelhNev()<<beteg.getFelhJelszo()<<endl;
             szam++;
         }
         int valasztott;
         cout<<"Valassza ki a beteg nevet es irja be a szamat: "<<endl;
         cin>>valasztott;
-        for(int i = 0; i<Betegek.size() ; i++){
+        for(int i = 0; i<betegek.size() ; i++){
             if(valasztott==i){
-                betegneve=Betegek[i].getFelhNev();
+                betegneve=betegek[i].getFelhNev();
             }
         }
 
@@ -103,21 +162,83 @@ namespace valami {
         cin>>gyogyszerneve;
 
         Recept a(lejarati_datum,betegneve,orvosneve,gyogyszerneve);
-
+        vector<Recept> receptek;
+        receptek.push_back(a);
         HealthcareSystem::instance()->getBeteg(betegneve)->addF_Receptek(a);
-        feladott_receptek.insert(make_pair(betegneve,a));
-        return 0;
+        feladott_receptek.push_back(a);
+
+        //kiiras fileba
+        fstream receptkiir;
+        receptkiir.open("orvos_altal_felirt_receptek.txt",std::ios_base::app);
+
+        if(receptkiir.is_open()){
+            for(auto recept : feladott_receptek){
+                receptkiir<<recept.getBetegneve()<<";"<<recept.getGyogyszerneve()<<";"<<recept.getLejarati_datum()<<";"<<recept.getOrvosneve()<<"\n";
+            }
+        }
+        receptkiir.close();
     }
 
     void Orvos::receptTorlese()
     {
+        //beolvasas
+        vector<Recept>receptek;
+        ifstream input;
+        input.open("orvos_altal_felirt_receptek.txt");
+        if(input.is_open()){
+            string line, part;
+            while (!input.eof()) {
+                getline(input, line);
+                if (line == "") continue;
+                stringstream ss(line);
+                string parts[4];
+                int idx = 0;
+                while (getline(ss, part, ';')) {
+                        parts[idx++] = part;
+                    }
+                string betegneve = parts[0];
+                string gyogyszerneve = parts[1];
+                string datum = parts[2];
+                string orvosneve = parts[3];
+                receptek.push_back(Recept(betegneve,gyogyszerneve, datum, orvosneve));
+            }
+        }
+        input.close();
+
+        //kiiratas
         int szam=0;
-        for(auto recept : feladott_receptek){
-            cout<<szam<<" "<<recept.second.getLejarati_datum()<<" "<<recept.second.getBetegneve()<<" "<<recept.second.getOrvosneve()<<" "<<recept.second.getGyogyszerneve()<<endl;
+        for(auto recept : receptek){
+            cout<<szam<<". "<<recept.getBetegneve()<<" "<<recept.getGyogyszerneve()<<" "<<recept.getLejarati_datum()<<endl;
             szam++;
         }
-        cout<<"Valaszd ki a receptet!"<<endl;
+        //valasztas
+        int valasztott;
+        cout<<"Kerlek valaszd ki a torlendo receptet es ird be a szamat: "<<endl;
+        cin>>valasztott;
+        for(int i=0;i<receptek.size();i++){
+            if(valasztott==i){
+                receptek.erase(receptek.begin()+i);
+            }
+        }
 
+        //betegek tartalmának átadasa a Betegeknek
+        feladott_receptek=receptek;
+
+        //file tartalmának törlése
+        ofstream recepttorol;
+        recepttorol.open("orvos_altal_felirt_receptek.txt",std::ios_base::trunc);
+        recepttorol.close();
+
+        //kiiras fileba
+        fstream receptkiir;
+        receptkiir.open("orvos_altal_felirt_receptek.txt",std::ios_base::app);
+
+        if(receptkiir.is_open()){
+            for(auto recept : feladott_receptek){
+                receptkiir<<recept.getBetegneve()<<";"<<recept.getGyogyszerneve()<<";"<<recept.getLejarati_datum()<<";"<<recept.getOrvosneve()<<"\n";
+            }
+        }
+        receptkiir.close();
     }
 
     void Orvos::getBetegek() const
@@ -130,7 +251,7 @@ namespace valami {
     void Orvos::getFeladott_receptek() const
     {
         for(auto receptek : feladott_receptek){
-            cout<<receptek.first<<receptek.second<<endl;
+            cout<<receptek.getBetegneve()<<" "<<receptek.getGyogyszerneve()<<" "<<receptek.getLejarati_datum()<<" "<<receptek.getOrvosneve()<<endl;
         }
     }
 

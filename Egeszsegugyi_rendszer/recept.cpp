@@ -1,6 +1,6 @@
 #include "recept.h"
 using namespace valami;
-Datum Recept::getLejarati_datum() const
+string Recept::getLejarati_datum() const
 {
     return lejarati_datum;
 }

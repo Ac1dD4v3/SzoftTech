@@ -20,7 +20,7 @@ namespace valami{
         void receptTorlese();
         void listElerheto()const;
         void deleteElerheto();
-        vector<Gyogyszer> addElerheto();
+        void addElerheto();
         vector<Gyogyszer> getElerhetok() const;
         void setElerhetok(const vector<Gyogyszer> &newElerhetok);
     };

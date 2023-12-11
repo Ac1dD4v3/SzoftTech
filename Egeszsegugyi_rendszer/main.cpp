@@ -108,7 +108,7 @@ void gyogyszertarkezdolap(const GyogyszertarPtr& gyogyszertar){
         gyogyszertarkezdolap(gyogyszertar);
     }
     else if(valasztas==1){
-        cout<<"Receptek torlese"<<endl;
+        gyogyszertar->receptTorlese();
         gyogyszertarkezdolap(gyogyszertar);
     }
     else if(valasztas==2){

@@ -57,9 +57,6 @@ namespace valami {
             }
 
             std::vector<GyogyszerPtr> getGyogyszerek() {
-                std::vector<GyogyszerPtr> gyogyszeres;
-                std::copy(gyogyszerek.begin(), gyogyszerek.end(), std::back_inserter(gyogyszeres));
-                std::transform(gyogyszeres.begin(), gyogyszeres.end(), std::back_inserter(gyogyszerek), [](const GyogyszerPtr& ptr) {  return std::dynamic_pointer_cast<Gyogyszer>(ptr); });
                 return gyogyszerek;
             }
 
@@ -158,7 +155,7 @@ namespace valami {
                                 parts[idx++] = part;
                             }
                             string Nev = parts[0];
-                            int Lejarati_datum = stoi(parts[1]);
+                            string Lejarati_datum = parts[1];
                             string FelhasznalasiUtmutato = parts[2];
                             gyogyszerek.push_back(std::make_shared<Gyogyszer>(Nev, Lejarati_datum,FelhasznalasiUtmutato));
                         }
