@@ -1,0 +1,4 @@
+alma;Semmelweis;Tester;0230
+alma;Semmelweis;Tester;0230
+k”rtw;Semmelweis;Tester;972652
+sdf;Semmelweis;Kis_Geza;213
