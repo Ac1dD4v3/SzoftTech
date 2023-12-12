@@ -1,2 +1,2 @@
 2;100;Tester;01234;admin@gamil.com;120123
-2;300;Kis_Geza;Jelszo2;igaziemail@gmail.com;120567
+2;200;Beteg_Jancsi;Jelszo;emailcim@mail.com;120346

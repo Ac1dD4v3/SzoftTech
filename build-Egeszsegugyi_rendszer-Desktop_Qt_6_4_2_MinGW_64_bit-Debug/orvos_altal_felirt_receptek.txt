@@ -1,4 +1,6 @@
-Tester;alma;0230;Semmelweis
-Tester;alma;0230;Semmelweis
-Tester;k”rtw;972652;Semmelweis
-Kis_Geza;sdf;213;Semmelweis
+Tester;Alma;2019;Semmelweis
+Tester;Alma;2019;Semmelweis
+Beteg_Jancsi;Korte;2020;Semmelweis
+Tester;Alma;2019;Semmelweis
+Beteg_Jancsi;Korte;2020;Semmelweis
+Tester;Citrom;2021;Semmelweis

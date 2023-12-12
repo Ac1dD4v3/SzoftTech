@@ -14,6 +14,7 @@ namespace valami{
             os<<datum;
             return os;
         }
+        void setDatum(const string &newDatum);
     };
 }
 #endif // DATUM_H

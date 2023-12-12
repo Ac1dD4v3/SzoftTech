@@ -144,7 +144,7 @@ namespace valami {
 
         int szam=0;
         for(auto beteg : betegek){
-            cout<<szam<<" "<<beteg.getFelhNev()<<beteg.getFelhJelszo()<<endl;
+            cout<<szam<<" "<<beteg.getFelhNev()<<endl;
             szam++;
         }
         int valasztott;
@@ -207,8 +207,8 @@ namespace valami {
 
         //kiiratas
         int szam=0;
-        for(auto recept : receptek){
-            cout<<szam<<". "<<recept.getBetegneve()<<" "<<recept.getGyogyszerneve()<<" "<<recept.getLejarati_datum()<<endl;
+        for(int i=0;i<receptek.size();i++){
+            cout<<szam<<". "<<receptek[i].getBetegneve()<<" "<<receptek[i].getGyogyszerneve()<<" "<<receptek[i].getLejarati_datum()<<endl;
             szam++;
         }
         //valasztas
@@ -222,6 +222,13 @@ namespace valami {
         }
 
         //betegek tartalmának átadasa a Betegeknek
+//        vector<Recept> valosreceptek;
+//        copy_if(receptek.begin(),receptek.end(),back_inserter(valosreceptek),[&receptek](){
+//            auto it = find(receptek.begin(),receptek.end(),[](const Recept& recept){return recept;});
+//            if(it==receptek.end()){
+//                return true;
+//            }
+//        });
         feladott_receptek=receptek;
 
         //file tartalmának törlése
@@ -234,8 +241,8 @@ namespace valami {
         receptkiir.open("orvos_altal_felirt_receptek.txt",std::ios_base::app);
 
         if(receptkiir.is_open()){
-            for(auto recept : feladott_receptek){
-                receptkiir<<recept.getBetegneve()<<";"<<recept.getGyogyszerneve()<<";"<<recept.getLejarati_datum()<<";"<<recept.getOrvosneve()<<"\n";
+            for(int i=0;i<feladott_receptek.size();i++){
+                receptkiir<<feladott_receptek[i].getBetegneve()<<";"<<feladott_receptek[i].getGyogyszerneve()<<";"<<feladott_receptek[i].getLejarati_datum()<<";"<<feladott_receptek[i].getOrvosneve()<<"\n";
             }
         }
         receptkiir.close();
