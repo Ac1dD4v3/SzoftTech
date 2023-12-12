@@ -1,2 +1,3 @@
-Beteg;valamiert
-Beteg_Jancsi;ALma
+Tester;alma
+Tester;korte
+Tester;sd
