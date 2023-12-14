@@ -4,12 +4,12 @@
 using namespace valami;
 
 
-vector<Recept> Beteg::getF_Receptek() const
+const vector<ReceptPtr>& Beteg::getF_Receptek() const
 {
     return orvosaltal_receptek;
 }
 
-void Beteg::addF_Receptek(const Recept& recept)
+void Beteg::addF_Receptek(const ReceptPtr& recept)
 {
     orvosaltal_receptek.push_back(recept);
 }
@@ -56,7 +56,7 @@ void Beteg::receptIgenylese()
 void Beteg::receptekMegtekintese()
 {
     //beolvasas
-    vector<Recept>receptek;
+    vector<ReceptPtr>receptek;
     ifstream input;
     input.open("orvos_altal_felirt_receptek.txt");
     if(input.is_open()){
@@ -74,23 +74,19 @@ void Beteg::receptekMegtekintese()
             string gyogyszerneve = parts[1];
             string datum = parts[2];
             string orvosneve = parts[3];
-            receptek.push_back(Recept(betegneve,gyogyszerneve, datum, orvosneve));
+            receptek.push_back(std::make_shared<Recept>(datum, betegneve, orvosneve, gyogyszerneve));
         }
     }
     input.close();
 
     //a megfelelő receptek áttöltese
-    for(auto recept : receptek){
-        cout<<recept.getBetegneve()<<" "<<recept.getGyogyszerneve()<<" "<<recept.getLejarati_datum()<<" "<<recept.getOrvosneve()<<endl;
-        cout<<endl;
-    }
-    string nev = HealthcareSystem::instance()->getBeteg(this->getFelhNev())->getFelhNev();
-    copy_if(receptek.begin(),receptek.end(),back_inserter(orvosaltal_receptek),[&nev](Recept& recept){return recept.getBetegneve()==nev;});
+    string nev = getFelhNev();
+    copy_if(receptek.begin(),receptek.end(),back_inserter(orvosaltal_receptek),[&nev](const ReceptPtr& recept){return recept->getBetegneve()==nev;});
 
     //kiiratas
-        int szam = 0;
-        for (auto recept : orvosaltal_receptek) {
-            cout << szam <<", Recept lejaratanak datuma: " << recept.getLejarati_datum() << ". Az On neve:" << recept.getBetegneve() << ", A felado orvos neve" << recept.getOrvosneve() << ", Recept lejaratanak datuma: " << recept.getGyogyszerneve() << endl;
-            szam++;
-        }
+    int szam = 0;
+    for (auto recept : orvosaltal_receptek) {
+        cout << szam <<", Recept lejaratanak datuma: " << recept->getLejarati_datum() << ", A felado orvos neve: " << recept->getOrvosneve() << ", Gyogyszer: " << recept->getGyogyszerneve() << endl;
+        szam++;
+    }
 }

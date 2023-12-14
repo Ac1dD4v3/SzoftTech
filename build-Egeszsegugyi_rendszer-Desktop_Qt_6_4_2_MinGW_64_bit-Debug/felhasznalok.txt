@@ -1,5 +1,7 @@
 2;100;Tester;01234;admin@gamil.com;120123
 2;200;Beteg_Jancsi;Jelszo;emailcim@mail.com;120346
 2;300;Kis_Geza;Jelszo2;igaziemail@gmail.com;120567
-1;400;Semmelweis;asd;kolbasz@kolbasz.kolbasz;123456
+1;400;s;asd;kolbasz@kolbasz.kolbasz;123456
 3;500;Alma;asd;valami@kukac.com;123456
+2;600;Felvett_beteg;asdf;k@k.com;120342
+2;700;Uj_beteg;asd;email;12030
